@@ -1,0 +1,29 @@
+﻿<Properties GitUserInfo="UsingGIT" StartupConfiguration="{3FAB5ACA-F204-4A10-9E94-E303EBCF24EC}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="../README.md">
+    <Files>
+      <File FileName="HireHubBackend/WeatherForecast.cs" Line="1" Column="1" />
+      <File FileName="HireHubBackend/Properties/launchSettings.json" />
+      <File FileName="HireHubBackend/appsettings.json" />
+      <File FileName="HireHubBackend/Controllers/WeatherForecastController.cs" Line="16" Column="20" />
+      <File FileName="HireHubBackend/Program.cs" />
+      <File FileName="HireHubBackend/Startup.cs" Line="5" Column="36" />
+      <File FileName="../README.md" Line="60" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="HireHubBackend" expanded="True">
+            <Node name="Tests" expanded="True" selected="True" />
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.PresentationLayer PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

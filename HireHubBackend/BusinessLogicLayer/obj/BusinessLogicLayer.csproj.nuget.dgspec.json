@@ -1,0 +1,116 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/gaganpreetsingh/Projects/OG-Soen6011summer2023/HireHubBackend/BusinessLogicLayer/BusinessLogicLayer.csproj": {}
+  },
+  "projects": {
+    "/Users/gaganpreetsingh/Projects/OG-Soen6011summer2023/HireHubBackend/BusinessLogicLayer/BusinessLogicLayer.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/gaganpreetsingh/Projects/OG-Soen6011summer2023/HireHubBackend/BusinessLogicLayer/BusinessLogicLayer.csproj",
+        "projectName": "BusinessLogicLayer",
+        "projectPath": "/Users/gaganpreetsingh/Projects/OG-Soen6011summer2023/HireHubBackend/BusinessLogicLayer/BusinessLogicLayer.csproj",
+        "packagesPath": "/Users/gaganpreetsingh/.nuget/packages/",
+        "outputPath": "/Users/gaganpreetsingh/Projects/OG-Soen6011summer2023/HireHubBackend/BusinessLogicLayer/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/gaganpreetsingh/.config/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {
+              "/Users/gaganpreetsingh/Projects/OG-Soen6011summer2023/HireHubBackend/DataAccessLayer/DataAccessLayer.csproj": {
+                "projectPath": "/Users/gaganpreetsingh/Projects/OG-Soen6011summer2023/HireHubBackend/DataAccessLayer/DataAccessLayer.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/x64/sdk/6.0.106/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/gaganpreetsingh/Projects/OG-Soen6011summer2023/HireHubBackend/DataAccessLayer/DataAccessLayer.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/gaganpreetsingh/Projects/OG-Soen6011summer2023/HireHubBackend/DataAccessLayer/DataAccessLayer.csproj",
+        "projectName": "DataAccessLayer",
+        "projectPath": "/Users/gaganpreetsingh/Projects/OG-Soen6011summer2023/HireHubBackend/DataAccessLayer/DataAccessLayer.csproj",
+        "packagesPath": "/Users/gaganpreetsingh/.nuget/packages/",
+        "outputPath": "/Users/gaganpreetsingh/Projects/OG-Soen6011summer2023/HireHubBackend/DataAccessLayer/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/gaganpreetsingh/.config/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/x64/sdk/6.0.106/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
