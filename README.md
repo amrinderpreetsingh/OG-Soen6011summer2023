@@ -52,7 +52,7 @@ Access to analytics and reporting tools for monitoring platform usage and genera
 |   Frontend   |                Angular                |
 |:------------:|:-------------------------------------:|
 | **Backend**  |                **.NetCore Framework**  |
-| **Database** |         Yet to be determined.         |
+| **Database** |         **In Memory Database**         |
 |   **IDE**    | **Visual Studio 2019, Visual Studio Code** |
 
 
