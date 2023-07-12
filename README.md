@@ -32,7 +32,7 @@ They can search for jobs, apply, track applications, and receive notifications.
 
 **Employer Features:**
 
-Employers can create accounts, post detailed job listings, and search for candidates.
+Employers can create accounts, post job listings, and search for candidates.
 They can review applications, manage interviews, and send invitations.
 
 **Admin Role:**
