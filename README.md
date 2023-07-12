@@ -43,17 +43,17 @@ Access to analytics and reporting tools for monitoring platform usage and genera
 ## Team Members and Roles
 | Student ID |          Name           | Role
 |:----------:|:-----------------------:|:---------:|
-|  40226671  |   Amrinderpreet Singh   ||
-|  40230095  |    Gaganpreet Singh     ||
-|  40227124  | Komalmeet Singh Bhoagal | |
+|  40226671  |   Amrinderpreet Singh   |Frontend and Backend Developer|
+|  40230095  |    Gaganpreet Singh     |Team Lead and Backend Developer|
+|  40227124  | Komalmeet Singh Bhoagal | Frontend and Designer |
 
 ## Technologies Used
 
 |   Frontend   |                Angular                |
 |:------------:|:-------------------------------------:|
-| **Backend**  |                **C#**                 |
+| **Backend**  |                **.NetCore Framework**  |
 | **Database** |         Yet to be determined.         |
-|   **IDE**    | **Visual Studio, Visual Studio Code** |
+|   **IDE**    | **Visual Studio 2019, Visual Studio Code** |
 
 
 ## GitHub Link:
