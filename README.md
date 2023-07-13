@@ -46,6 +46,8 @@ Access to analytics and reporting tools for monitoring platform usage and genera
 |  40226671  |   Amrinderpreet Singh   |Frontend and Backend Developer|
 |  40230095  |    Gaganpreet Singh     |Team Lead and Backend Developer|
 |  40227124  | Komalmeet Singh Bhoagal | Frontend and Designer |
+|40152356|Sara Khandehrooy|Software Engineer|
+
 
 ## Technologies Used
 
@@ -57,4 +59,5 @@ Access to analytics and reporting tools for monitoring platform usage and genera
 
 
 ## GitHub Link:
+
 GitHub link: https://github.com/amrinderpreetsingh/OG-Soen6011summer2023
