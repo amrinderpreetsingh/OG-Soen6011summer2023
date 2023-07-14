@@ -1,11 +1,45 @@
 ﻿<Properties GitUserInfo="UsingGIT" StartupConfiguration="{3FAB5ACA-F204-4A10-9E94-E303EBCF24EC}|Default">
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="HireHubBackend/Controllers/EmployerController.cs">
+    <Files>
+      <File FileName="DataAccessLayer/Entities/Employer.cs" Line="17" Column="1" />
+      <File FileName="BusinessLogicLayer/Services/ServiceFacade.cs" Line="21" Column="1" />
+      <File FileName="BusinessLogicLayer/Services/IServiceFacade.cs" Line="10" Column="66" />
+      <File FileName="BusinessLogicLayer/Services/EmployerService.cs" Line="31" Column="19" />
+      <File FileName="BusinessLogicLayer/Services/IEmployerService.cs" Line="10" Column="58" />
+      <File FileName="DataAccessLayer/DataServices/EmployerDataService.cs" Line="21" Column="24" />
+      <File FileName="DataAccessLayer/DataServices/IEmployerDataService.cs" Line="10" Column="58" />
+      <File FileName="DataAccessLayer/Data/Database.cs" Line="21" Column="9" />
+      <File FileName="HireHubBackend/Program.cs" Line="1" Column="14" />
+      <File FileName="HireHubBackend/Startup.cs" Line="55" Column="76" />
+      <File FileName="DataAccessLayer/Data/IDatabase.cs" Line="7" Column="42" />
+      <File FileName=".vs/HireHubBackend/xs/project-cache/BusinessLogicLayer-Debug.json" Line="1" Column="1" />
+      <File FileName="HireHubBackend/appsettings.json" Line="1" Column="1" />
+      <File FileName="HireHubBackend/appsettings.Development.json" Line="1" Column="1" />
+      <File FileName="HireHubBackend/Properties/launchSettings.json" Line="23" Column="29" />
+      <File FileName="HireHubBackend/Controllers/EmployerController.cs" Line="41" Column="1" />
+    </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="HireHubBackend" expanded="True" selected="True">
-            <Node name="PresentationLayer" expanded="True" />
-            <Node name="Tests" expanded="True" />
+          <Node name="HireHubBackend" expanded="True">
+            <Node name="BusinessLogicLayer" expanded="True">
+              <Node name="Services" expanded="True" />
+            </Node>
+            <Node name="DataAccessLayer" expanded="True">
+              <Node name="Data" expanded="True" />
+              <Node name="DataServices" expanded="True" />
+              <Node name="Entities" expanded="True" />
+            </Node>
+            <Node name="PresentationLayer" expanded="True">
+              <Node name="Controllers" expanded="True" />
+              <Node name="Properties" expanded="True" />
+              <Node name="appsettings.json" expanded="True" />
+            </Node>
+            <Node name="Tests" expanded="True">
+              <Node name="Dependencies" expanded="True">
+                <Node name="PackageDependencies" expanded="True" />
+              </Node>
+            </Node>
           </Node>
         </State>
       </Pad>
@@ -15,7 +49,9 @@
   <MonoDevelop.Ide.ItemProperties.PresentationLayer PreferredExecutionTarget="/Applications/Google Chrome.app" />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/gaganpreetsingh/Projects/OG-Soen6011summer2023/HireHubBackend/DataAccessLayer/DataServices/EmployerDataService.cs" relfile="DataAccessLayer/DataServices/EmployerDataService.cs" line="18" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
 </Properties>

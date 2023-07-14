@@ -6,8 +6,12 @@
 
   <ItemGroup>
     <None Remove="DataServices\" />
+    <None Remove="Entities\" />
+    <None Remove="Data\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DataServices\" />
+    <Folder Include="Entities\" />
+    <Folder Include="Data\" />
   </ItemGroup>
 </Project>
