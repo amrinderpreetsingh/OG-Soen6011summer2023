@@ -1,6 +1,3 @@
-/Users/gaganpreetsingh/Projects/OG-Soen6011summer2023/HireHubBackend/Tests/bin/Debug/netcoreapp3.1/xunit.runner.visualstudio.dotnetcore.testadapter.dll
-/Users/gaganpreetsingh/Projects/OG-Soen6011summer2023/HireHubBackend/Tests/bin/Debug/netcoreapp3.1/xunit.runner.reporters.netcoreapp10.dll
-/Users/gaganpreetsingh/Projects/OG-Soen6011summer2023/HireHubBackend/Tests/bin/Debug/netcoreapp3.1/xunit.runner.utility.netcoreapp10.dll
 /Users/gaganpreetsingh/Projects/OG-Soen6011summer2023/HireHubBackend/Tests/bin/Debug/netcoreapp3.1/Tests.deps.json
 /Users/gaganpreetsingh/Projects/OG-Soen6011summer2023/HireHubBackend/Tests/bin/Debug/netcoreapp3.1/Tests.runtimeconfig.json
 /Users/gaganpreetsingh/Projects/OG-Soen6011summer2023/HireHubBackend/Tests/bin/Debug/netcoreapp3.1/Tests.runtimeconfig.dev.json
@@ -95,3 +92,6 @@
 /Users/gaganpreetsingh/Projects/OG-Soen6011summer2023/HireHubBackend/Tests/obj/Debug/netcoreapp3.1/Tests.dll
 /Users/gaganpreetsingh/Projects/OG-Soen6011summer2023/HireHubBackend/Tests/obj/Debug/netcoreapp3.1/Tests.pdb
 /Users/gaganpreetsingh/Projects/OG-Soen6011summer2023/HireHubBackend/Tests/obj/Debug/netcoreapp3.1/Tests.genruntimeconfig.cache
+/Users/gaganpreetsingh/Projects/OG-Soen6011summer2023/HireHubBackend/Tests/bin/Debug/netcoreapp3.1/xunit.runner.visualstudio.testadapter.dll
+/Users/gaganpreetsingh/Projects/OG-Soen6011summer2023/HireHubBackend/Tests/bin/Debug/netcoreapp3.1/xunit.runner.reporters.net452.dll
+/Users/gaganpreetsingh/Projects/OG-Soen6011summer2023/HireHubBackend/Tests/bin/Debug/netcoreapp3.1/xunit.runner.utility.net452.dll

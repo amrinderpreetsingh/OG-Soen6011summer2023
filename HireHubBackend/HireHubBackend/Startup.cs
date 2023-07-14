@@ -32,7 +32,6 @@ namespace PresentationLayer
             services.AddControllers();
             services.AddScoped<IServiceFacade, ServiceFacade>();
             services.AddScoped<IEmployerService, EmployerService>();
-            services.AddScoped<IEmployerDataService, EmployerDataService>();
             services.AddSingleton<IDatabaseDataService, DatabaseDataService>();
         }
 
