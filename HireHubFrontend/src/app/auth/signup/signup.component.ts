@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Employer } from 'src/app/model/employer.model';
+import { Student } from 'src/app/model/student.model';
 import { User } from 'src/app/model/user';
 import { AuthService } from 'src/app/service/auth.service';
 
@@ -17,8 +19,13 @@ export class SignupComponent implements OnInit {
   school : string= '';
   company : string = '';
   experience : string= '';
+  email: string='';
+  location: string= '';
+  about: string= '';
 
   user : User = new User();
+  employer: Employer= new Employer();
+  student: Student = new Student();
 
   constructor( private authService : AuthService, private route : Router) {
     this.roles = [
@@ -31,34 +38,54 @@ export class SignupComponent implements OnInit {
     this.username = '';
     this.password = '';
     this.name = '';
+    this.email='';
+    this.about='';
+    this.location='';
   }
 
   roles : string[];
 
   signup() {
- 
-    this.user.username = this.username;
-    this.user.password = this.password;
-    this.user.name = this.name;
-    this.user.role = this.role;
-    this.user.company= this.company;
-    this.user.experience= this.experience;
-    this.user.school= this.school;
 
-    this.authService.signUp(this.user).subscribe(res => {
-      if(res == null) {
-        alert("Registration failed");
+    if(this.role == "Employer"){
+      this.employer.companyname= this.name;
+      this.employer.password= this.password;
+      this.employer.email= this.email;
+      this.employer.location= this.location;
+      this.employer.about = this.about;
+
+      this.authService.signUp_employer(this.employer).subscribe(res => {
+        if(res == null) {
+          alert("Registration failed");
+          this.ngOnInit();
+        }else {
+          console.log("Registration successful");
+          alert("Registration successful");
+          this.route.navigate(['/']);
+        }
+      }, err => {
+        alert("Registration failed.");
         this.ngOnInit();
-      }else {
-        console.log("Registration successful");
-        alert("Registration successful");
-        this.route.navigate(['/']);
-      }
-    }, err => {
-      alert("Registration failed.");
-      this.ngOnInit();
-    })
+      })
 
+    }else{
+      this.student.username= this.name;
+      this.student.password= this.password;
+      this.student.school= this.school;
+
+      this.authService.signUp_student(this.student).subscribe(res => {
+        if(res == null) {
+          alert("Registration failed");
+          this.ngOnInit();
+        }else {
+          console.log("Registration successful");
+          alert("Registration successful");
+          this.route.navigate(['/']);
+        }
+      }, err => {
+        alert("Registration failed.");
+        this.ngOnInit();
+      })
+    }
   }
-
 }

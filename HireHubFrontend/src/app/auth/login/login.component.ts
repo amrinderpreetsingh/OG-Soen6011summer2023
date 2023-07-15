@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { User } from 'src/app/model/user';
+import { Employer } from 'src/app/model/employer.model';
+import { Student } from 'src/app/model/student.model';
 import { AuthService } from 'src/app/service/auth.service';
 
 @Component({
@@ -14,7 +15,8 @@ export class LoginComponent implements OnInit {
   password : string = '';
   role : string = '';
 
-  user : User = new User();
+  student : Student= new Student();
+  employer : Employer= new Employer();
 
   roles : string[];
 
@@ -31,34 +33,41 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    // this.user.username = this.username;
-    // this.user.password = this.password;
-    // this.user.role = this.role;
+    if( this.role == 'Student') {
+      this.student.username = this.username;
+      this.student.password = this.password;
 
-    // this.authService.login(this.user).subscribe(res => {
+      this.authService.login_student(this.student).subscribe(res => {
+        if(res == null) {
+          alert("Uername or password is wrong");
+          this.ngOnInit();
+    }else {
+      console.log("Login successful");
+      localStorage.setItem("token",res.token);
 
-    //   if(res == null) {
-    //     alert("Uername or password is wrong");
-    //     this.ngOnInit();
-    //   }else {
-    //     console.log("Login successful");
-    //     localStorage.setItem("token",res.token);
+        this.route.navigate(['/Student']);
+    }
+  }, err => {
+    alert("Login failed");
+    this.ngOnInit();
+  })}
 
-        if(this.role == 'Student') {
-          this.route.navigate(['/Student']);
-        } 
+  if( this.role == 'Employer') {
+    this.employer.companyname = this.username;
+    this.employer.password = this.password;
 
-        if( this.role == 'Employer') {
-          this.route.navigate(['/Employer']);
-        }
+    this.authService.login_employer(this.employer).subscribe(res => {
+      if(res == null) {
+        alert("Uername or password is wrong");
+        this.ngOnInit();
+  }else {
+    console.log("Login successful");
+    localStorage.setItem("token",res.token);
 
-    //   }
-
-    // }, err => {
-    //   alert("Login failed");
-    //   this.ngOnInit();
-    // })
-
+      this.route.navigate(['/Employer']);
   }
-
+}, err => {
+  alert("Login failed");
+  this.ngOnInit();
+})}}
 }

@@ -19,6 +19,9 @@ import { EmployerDashboardComponent } from './component/employer-dashboard/emplo
 import {MatListModule} from '@angular/material/list';
 import { ListJobsComponent } from './component/list-jobs/list-jobs.component';
 import { PostJobComponent } from './component/post-job/post-job.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
@@ -42,7 +45,10 @@ import { PostJobComponent } from './component/post-job/post-job.component';
     MatButtonModule,  
     MatSidenavModule,
     MatListModule,
-    NoopAnimationsModule
+    NoopAnimationsModule,
+    MatFormFieldModule,
+    MatTableModule,
+    MatPaginatorModule
   ],
   providers: [],
   bootstrap: [AppComponent]
