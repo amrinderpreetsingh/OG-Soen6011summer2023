@@ -44,13 +44,13 @@ export class LoginComponent implements OnInit {
     //     console.log("Login successful");
     //     localStorage.setItem("token",res.token);
 
-    //     if(this.role == 'user') {
-          this.route.navigate(['/user']);
-    //     } 
+        if(this.role == 'Student') {
+          this.route.navigate(['/Student']);
+        } 
 
-    //     if( this.role == 'admin') {
-    //       this.route.navigate(['/admin']);
-    //     }
+        if( this.role == 'Employer') {
+          this.route.navigate(['/Employer']);
+        }
 
     //   }
 

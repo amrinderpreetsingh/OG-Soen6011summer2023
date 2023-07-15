@@ -13,10 +13,19 @@ export class SignupComponent implements OnInit {
   name : string = '';
   username : string = '';
   password : string = '';
+  role: string= '';
+  school : string= '';
+  company : string = '';
+  experience : string= '';
 
   user : User = new User();
 
-  constructor( private authService : AuthService, private route : Router) { }
+  constructor( private authService : AuthService, private route : Router) {
+    this.roles = [
+      'Student',
+      'Employer'
+    ]
+   }
 
   ngOnInit(): void {
     this.username = '';
@@ -24,26 +33,31 @@ export class SignupComponent implements OnInit {
     this.name = '';
   }
 
+  roles : string[];
+
   signup() {
+ 
+    this.user.username = this.username;
+    this.user.password = this.password;
+    this.user.name = this.name;
+    this.user.role = this.role;
+    this.user.company= this.company;
+    this.user.experience= this.experience;
+    this.user.school= this.school;
 
-    // this.user.username = this.username;
-    // this.user.password = this.password;
-    // this.user.name = this.name;
-    // this.user.role = 'user';
-
-    // this.authService.signUp(this.user).subscribe(res => {
-    //   if(res == null) {
-    //     alert("Registration failed");
-    //     this.ngOnInit();
-    //   }else {
-    //     console.log("Registration successful");
-    //     alert("Registration successful");
-    //     this.route.navigate(['/']);
-    //   }
-    // }, err => {
-    //   alert("Registration failed.");
-    //   this.ngOnInit();
-    // })
+    this.authService.signUp(this.user).subscribe(res => {
+      if(res == null) {
+        alert("Registration failed");
+        this.ngOnInit();
+      }else {
+        console.log("Registration successful");
+        alert("Registration successful");
+        this.route.navigate(['/']);
+      }
+    }, err => {
+      alert("Registration failed.");
+      this.ngOnInit();
+    })
 
   }
 
