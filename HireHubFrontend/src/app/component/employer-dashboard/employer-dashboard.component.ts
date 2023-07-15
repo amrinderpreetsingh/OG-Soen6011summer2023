@@ -8,7 +8,8 @@ import { Component, OnInit } from '@angular/core';
 export class EmployerDashboardComponent implements OnInit {
 
   constructor() { }
-
+  isExpanded: boolean = false;
+  
   ngOnInit(): void {
   }
 

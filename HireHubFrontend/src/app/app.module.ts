@@ -11,10 +11,14 @@ import { AdminDashboardComponent } from './component/admin-dashboard/admin-dashb
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import { StudentDashboardComponent } from './component/student-dashboard/student-dashboard.component';
 import { EmployerDashboardComponent } from './component/employer-dashboard/employer-dashboard.component';
+import {MatListModule} from '@angular/material/list';
+import { ListJobsComponent } from './component/list-jobs/list-jobs.component';
+import { PostJobComponent } from './component/post-job/post-job.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +27,9 @@ import { EmployerDashboardComponent } from './component/employer-dashboard/emplo
     SignupComponent,
     AdminDashboardComponent,
     StudentDashboardComponent,
-    EmployerDashboardComponent
+    EmployerDashboardComponent,
+    ListJobsComponent,
+    PostJobComponent
   ],
   imports: [
     BrowserModule,
@@ -34,6 +40,8 @@ import { EmployerDashboardComponent } from './component/employer-dashboard/emplo
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,  
+    MatSidenavModule,
+    MatListModule,
     NoopAnimationsModule
   ],
   providers: [],
