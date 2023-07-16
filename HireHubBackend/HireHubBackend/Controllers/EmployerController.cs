@@ -31,7 +31,7 @@ namespace PresentationLayer.Controllers
         [Route("Signup")]
         public ActionResult SignUp(Employer employer)
         {
-            return Ok(_serviceFacade.EmployerSignUp(employer));
+            return Ok(_serviceFacade.EmployerSignup(employer));
         }
 
         [HttpGet]
