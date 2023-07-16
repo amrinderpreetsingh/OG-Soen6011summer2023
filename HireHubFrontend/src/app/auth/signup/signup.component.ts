@@ -48,10 +48,10 @@ export class SignupComponent implements OnInit {
   signup() {
 
     if(this.role == "Employer"){
-      this.employer.companyname= this.name;
-      this.employer.password= this.password;
-      this.employer.email= this.email;
-      this.employer.location= this.location;
+      this.employer.companyName= this.name;
+      this.employer.companyPassword= this.password;
+      this.employer.companyEmail= this.email;
+      this.employer.address= this.location;
       this.employer.about = this.about;
 
       this.authService.signUp_employer(this.employer).subscribe(res => {

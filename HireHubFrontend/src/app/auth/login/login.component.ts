@@ -14,6 +14,7 @@ export class LoginComponent implements OnInit {
   username : string = '';
   password : string = '';
   role : string = '';
+  email: string = '';
 
   student : Student= new Student();
   employer : Employer= new Employer();
@@ -34,7 +35,7 @@ export class LoginComponent implements OnInit {
 
   login() {
     if( this.role == 'Student') {
-      this.student.username = this.username;
+      this.student.email = this.email;
       this.student.password = this.password;
 
       this.authService.login_student(this.student).subscribe(res => {
@@ -53,8 +54,8 @@ export class LoginComponent implements OnInit {
   })}
 
   if( this.role == 'Employer') {
-    this.employer.companyname = this.username;
-    this.employer.password = this.password;
+    this.employer.companyEmail = this.email;
+    this.employer.companyPassword = this.password;
 
     this.authService.login_employer(this.employer).subscribe(res => {
       if(res == null) {

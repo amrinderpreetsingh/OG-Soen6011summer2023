@@ -1,9 +1,9 @@
 export class Employer {
-    id : string = '';
-    companyname : string = '';
-    password : string = '';
+    id : number | undefined ;
+    companyName : string = '';
+    companyPassword : string = '';
     token : string = '';
     about : string= '';
-    location: string = ''
-    email: string= ''
+    address: string = ''
+    companyEmail: string= ''
 }

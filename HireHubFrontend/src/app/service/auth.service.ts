@@ -15,8 +15,8 @@ export class AuthService {
 
   constructor(private http : HttpClient) {
 
-    this.loginUrl = "http://localhost:8080/auth/login";
-    this.signUpUrl = "http://localhost:8080/auth/register";
+    this.loginUrl = "http://localhost:5001/employer/login";
+    this.signUpUrl = "http://localhost:5001/employer/signup";
 
   }
 
@@ -27,7 +27,7 @@ export class AuthService {
 
   login_employer(employer :Employer) : Observable<any> {
     console.log(employer)
-    return this.http.post<any>(this.loginUrl,employer);
+    return this.http.get<any>(this.loginUrl+"?email="+employer.companyEmail+"&password="+employer.companyPassword);
   }
 
   signUp(user : User) : Observable<any> {
