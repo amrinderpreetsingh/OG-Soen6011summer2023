@@ -13,8 +13,8 @@ namespace DataAccessLayer.Data
             {
                 CompanyName="Nagarro",
                 CompanyEmail="jobs@nagarro.com",
-                CompanyPassword="1234"
-
+                CompanyPassword="1234",
+                Id=1
             }
         };
 
@@ -29,8 +29,18 @@ namespace DataAccessLayer.Data
                 Role="",
                 Skills="",
                 PostedBy="",
-                Type=""
+                Type="" }
+        };
 
+        private List<Student> _students = new List<Student>()
+        {
+            new Student
+            {
+                Name="Gagan",
+                Email="gagan@hirehub.com",
+                Password="1234",
+                Qualification="Masters",
+                Id=1
             }
         };
 
@@ -51,5 +61,9 @@ namespace DataAccessLayer.Data
             return true;
         }
 
+        public List<Student> GetAllStudents()
+        {
+            return _students;
+        }
     }
 }
