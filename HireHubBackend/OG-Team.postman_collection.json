@@ -9,15 +9,117 @@
 			"name": "Employer/Login",
 			"request": {
 				"method": "GET",
-				"header": []
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5001/employer/Login?email=jobs@nagarro.com&password=12345",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"employer",
+						"Login"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "jobs@nagarro.com"
+						},
+						{
+							"key": "password",
+							"value": "12345"
+						}
+					]
+				}
 			},
 			"response": []
 		},
 		{
 			"name": "Employer/SignUp",
 			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"companyName\": \"KPMG\",\n    \"companyEmail\": \"jobs@kpmg.com\",\n    \"companyPassword\": \"1234\",\n    \"address\": \"India\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5001/employer/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"employer",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Student/Login",
+			"request": {
 				"method": "GET",
-				"header": []
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5001/student/Login?email=gagan@hirehub.com&password=1234",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"student",
+						"Login"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "gagan@hirehub.com"
+						},
+						{
+							"key": "password",
+							"value": "1234"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Student/Signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\":\"sunny\",\n    \"email\":\"sunny@hirehub.com\",\n    \"password\":\"1234\",\n    \"qualification\":\"Bachelors\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5001/student/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"student",
+						"signup"
+					]
+				}
 			},
 			"response": []
 		}
