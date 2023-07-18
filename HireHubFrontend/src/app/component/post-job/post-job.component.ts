@@ -21,7 +21,7 @@ export class PostJobComponent implements OnInit {
 
   postJobs : PostJobs = new PostJobs();
 
-  constructor(private authService: AuthService) { 
+  constructor(private authService:AuthService ) { 
     this.jobTypes = ['Internship', 'Contract', 'Full Time', 'Part Time'];
     this.experiences = [0,1,2,3,4,5,6,7,8]
   }
@@ -50,6 +50,10 @@ export class PostJobComponent implements OnInit {
 
  this.authService.post_jobs(this.postJobs).subscribe(res => {
   console.log(res)
+  if(res==true){
+    alert("Job Posted")
+    this.ngOnInit()
+  }
  })
 }
 }
