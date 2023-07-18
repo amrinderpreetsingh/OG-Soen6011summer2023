@@ -4,8 +4,6 @@ import { Router } from '@angular/router';
 import { MatPaginator } from '@angular/material/paginator';
 import { Jobs } from 'src/app/model/jobs';
 import { MatTableDataSource } from '@angular/material/table';
-import { PostJobs } from 'src/app/model/post-jobs';
-
 
 
 @Component({
@@ -18,7 +16,7 @@ export class ListJobsComponent implements OnInit {
   @ViewChild(MatPaginator) paginator !: MatPaginator;
 
   constructor(private authService : AuthService, private route : Router) { }
-
+  isExpanded: boolean = false;
   ngOnInit(): void {
     this.list_all_jobs();
   }
@@ -31,7 +29,7 @@ export class ListJobsComponent implements OnInit {
      this.authService.get_job_list().subscribe(res=>{
       console.log(res)
       this.job_data= res;
-      this.dataSource = new MatTableDataSource<PostJobs>(this.job_data)
+      this.dataSource = new MatTableDataSource<Jobs>(this.job_data)
       this.dataSource.paginator = this.paginator;
      })
   }

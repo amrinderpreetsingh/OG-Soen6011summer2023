@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { Employer } from '../model/employer.model';
 import { Student } from '../model/student.model';
 import { Jobs } from '../model/jobs';
-import { PostJobs } from '../model/post-jobs';
+
 
 @Injectable({
   providedIn: 'root'
@@ -51,10 +51,10 @@ export class AuthService {
   }
 
   get_job_list():Observable<any>{
-    return this.http.get<PostJobs>(this.getJobsUrl+"?email=jobs@nagarro.com")
+    return this.http.get<Jobs>(this.getJobsUrl+"?email=jobs@nagarro.com")
   }
 
-  post_jobs(job:PostJobs):Observable<any>{
+  post_jobs(job:Jobs):Observable<any>{
     return this.http.post(this.postJobUrl,job)
   }
 

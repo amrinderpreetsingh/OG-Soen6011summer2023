@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PostJobs } from 'src/app/model/post-jobs';
+import { Jobs } from 'src/app/model/jobs';
 import { AuthService } from 'src/app/service/auth.service';
 
 @Component({
@@ -19,7 +19,7 @@ export class PostJobComponent implements OnInit {
   jobTypes: string[]
   experiences:number[]
 
-  postJobs : PostJobs = new PostJobs();
+  postJobs : Jobs = new Jobs();
 
   constructor(private authService:AuthService ) { 
     this.jobTypes = ['Internship', 'Contract', 'Full Time', 'Part Time'];

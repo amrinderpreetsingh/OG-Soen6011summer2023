@@ -1,6 +1,10 @@
 export class Jobs {
     id:number | undefined;
-    userId: number |undefined;
-    title:string='';
-    completed:string=''
+    title : string = '';
+    skills : string = '';
+    role : string = '';
+    type : string = '';
+    experience : string='';
+    description : string= '';
+    postedBy:any;
 }
