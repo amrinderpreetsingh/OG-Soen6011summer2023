@@ -45,5 +45,10 @@ namespace BusinessLogicLayer.Services
         {
             return _studentService.Login(email, password);
         }
+
+        public List<Student> GetStudents()
+        {
+            return _employerService.GetStudents();
+        }
     }
 }

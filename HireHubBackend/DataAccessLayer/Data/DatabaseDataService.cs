@@ -40,7 +40,9 @@ namespace DataAccessLayer.Data
                 Email="gagan@hirehub.com",
                 Password="1234",
                 Qualification="Masters",
-                Id=1
+                Id=1,
+                Experience="1",
+                School="GNDU"
             }
         };
 

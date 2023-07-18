@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using DataAccessLayer.Data;
 using DataAccessLayer.Entities;
@@ -34,6 +35,11 @@ namespace BusinessLogicLayer.Services
             employer.Id = employers.Max(x => x.Id) + 1;
             employers.Add(employer);
             return true;
+        }
+
+        public List<Student> GetStudents()
+        {
+            return _databaseDataService.GetAllStudents();
         }
     }
 }
