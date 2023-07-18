@@ -1,61 +1,106 @@
-<mat-toolbar color="primary">
-  <h4>Employer Dashboard</h4>
-</mat-toolbar>
+<mat-sidenav-container autosize>
+  <mat-sidenav #sidenav mode="side" opened="isExpanded">
+    <mat-nav-list>
 
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-md-2"></div>
-    <div class="col-md-8 mt-4">
-      <div class="col-md-12" >
-        <table mat-table [dataSource]="dataSource">
+      <mat-list-item (click)="isExpanded = !isExpanded">
+        <mat-icon mat-list-icon class="chevron-button" [ngClass]="{ rotated: isExpanded }">chevron_right
+        </mat-icon>
+      </mat-list-item>
+      <mat-list-item [routerLink]="'/post-job'">
+        <mat-icon mat-list-icon>important_devices</mat-icon>
+        <span *ngIf="isExpanded" class="menu-item">Post Jobs</span>
+      </mat-list-item>
 
-      
-          <ng-container matColumnDef="id">
-            <th mat-header-cell *matHeaderCellDef>Title</th>
-            <td mat-cell *matCellDef="let element">{{ element.title }}</td>
-          </ng-container>
+      <mat-list-item [routerLink]="'/list-job'">
+        <mat-icon mat-list-icon>assignment icon</mat-icon>
+        <span *ngIf="isExpanded" class="menu-item">List Jobs</span>
+      </mat-list-item>
 
+      <mat-list-item [routerLink]="'/list-student'">
+        <mat-icon mat-list-icon>supervisor_account</mat-icon>
+        <span *ngIf="isExpanded" class="menu-item">List Students</span>
+      </mat-list-item>
+
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <!-- Content - rendered Content for the current router path into the <router-outlet>, e.g. /dashboard or /info-->
+  <mat-sidenav-content>
        
-          <ng-container matColumnDef="userId">
-            <th mat-header-cell *matHeaderCellDef>Role</th>
-            <td mat-cell *matCellDef="let element">{{ element.role }}</td>
-          </ng-container>
-
-         
-          <ng-container matColumnDef="title">
-            <th mat-header-cell *matHeaderCellDef>Type</th>
-            <td mat-cell *matCellDef="let element">{{ element.type }}</td>
-          </ng-container>
-
-        
-          <ng-container matColumnDef="completed">
-            <th mat-header-cell *matHeaderCellDef>Experience(years)</th>
-            <td mat-cell *matCellDef="let element">{{ element.experience }}</td>
-          </ng-container>
-
-          <ng-container matColumnDef="skills">
-            <th mat-header-cell *matHeaderCellDef>Skills</th>
-            <td mat-cell *matCellDef="let element">{{ element.skills }}</td>
-          </ng-container>
-
-          <ng-container matColumnDef="description">
-            <th mat-header-cell *matHeaderCellDef>Description</th>
-            <td mat-cell *matCellDef="let element">{{ element.description }}</td>
-          </ng-container>
-
-          <ng-container matColumnDef="action">
-            <th mat-header-cell *matHeaderCellDef>Action</th>
-            <td mat-cell *matCellDef="let element"><button mat-raised-button color="primary" (click)="editJob(element.id)">Edit</button>
-              | <button mat-raised-button color="warn" (click)="deleteJob(element.id)">Delete</button></td>
-          </ng-container>
-
-          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-        </table>
-        <mat-paginator [pageSizeOptions]="[5,10,20]" showFirstLastButtons></mat-paginator>
+    <mat-toolbar color="primary">
+      <h4>Employer Dashboard</h4>
+    </mat-toolbar>
+    
+     
+     <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8 mt-4">
+          <div class="col-md-12" >
+            <table mat-table [dataSource]="dataSource">
+    
+          
+              <ng-container matColumnDef="id">
+                <th mat-header-cell *matHeaderCellDef>Title</th>
+                <td mat-cell *matCellDef="let element">{{ element.title }}</td>
+              </ng-container>
+    
+           
+              <ng-container matColumnDef="userId">
+                <th mat-header-cell *matHeaderCellDef>Role</th>
+                <td mat-cell *matCellDef="let element">{{ element.role }}</td>
+              </ng-container>
+    
+             
+              <ng-container matColumnDef="title">
+                <th mat-header-cell *matHeaderCellDef>Type</th>
+                <td mat-cell *matCellDef="let element">{{ element.type }}</td>
+              </ng-container>
+    
+            
+              <ng-container matColumnDef="completed">
+                <th mat-header-cell *matHeaderCellDef>Experience(years)</th>
+                <td mat-cell *matCellDef="let element">{{ element.experience }}</td>
+              </ng-container>
+    
+              <ng-container matColumnDef="skills">
+                <th mat-header-cell *matHeaderCellDef>Skills</th>
+                <td mat-cell *matCellDef="let element">{{ element.skills }}</td>
+              </ng-container>
+    
+              <ng-container matColumnDef="description">
+                <th mat-header-cell *matHeaderCellDef>Description</th>
+                <td mat-cell *matCellDef="let element">{{ element.description }}</td>
+              </ng-container>
+    
+              <ng-container matColumnDef="action">
+                <th mat-header-cell *matHeaderCellDef>Action</th>
+                <td mat-cell *matCellDef="let element"><button mat-raised-button color="primary" (click)="editJob(element.id)">Edit</button>
+                  | <button mat-raised-button color="warn" (click)="deleteJob(element.id)">Delete</button></td>
+              </ng-container>
+    
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+            <mat-paginator [pageSizeOptions]="[5,10,20]" showFirstLastButtons></mat-paginator>
+          </div>
+        </div>
+        <div class="col-md-2"></div>
       </div>
-    </div>
-    <div class="col-md-2"></div>
-  </div>
-</div> 
+    </div> 
 
+
+
+
+
+
+
+
+    <div id="post-job">
+      <!-- Post Jobs section content -->
+    </div>
+    <div id="list-job">
+      <!-- List Jobs section content -->
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
