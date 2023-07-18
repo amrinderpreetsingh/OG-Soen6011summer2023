@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Employer } from 'src/app/model/employer.model';
 import { Student } from 'src/app/model/student.model';
-import { User } from 'src/app/model/user';
 import { AuthService } from 'src/app/service/auth.service';
 
 @Component({
@@ -23,7 +22,7 @@ export class SignupComponent implements OnInit {
   location: string= '';
   about: string= '';
 
-  user : User = new User();
+ 
   employer: Employer= new Employer();
   student: Student = new Student();
 
@@ -58,6 +57,8 @@ export class SignupComponent implements OnInit {
         if(res == null) {
           alert("Registration failed");
           this.ngOnInit();
+        }else if(res == false){
+          alert("Email already exist !");
         }else {
           console.log("Registration successful");
           alert("Registration successful");
@@ -77,7 +78,12 @@ export class SignupComponent implements OnInit {
         if(res == null) {
           alert("Registration failed");
           this.ngOnInit();
-        }else {
+        }
+        
+        else if(res == false){
+          alert("Email already exist !");
+        }
+        else {
           console.log("Registration successful");
           alert("Registration successful");
           this.route.navigate(['/']);
