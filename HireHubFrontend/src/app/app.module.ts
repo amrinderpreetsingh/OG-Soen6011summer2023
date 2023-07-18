@@ -23,6 +23,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
+import { ListStudentComponent } from './component/list-student/list-student.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { MatSortModule } from '@angular/material/sort';
     StudentDashboardComponent,
     EmployerDashboardComponent,
     ListJobsComponent,
-    PostJobComponent
+    PostJobComponent,
+    ListStudentComponent,
   ],
   imports: [
     BrowserModule,
