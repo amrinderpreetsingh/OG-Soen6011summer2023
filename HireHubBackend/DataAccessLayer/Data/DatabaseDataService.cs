@@ -11,10 +11,10 @@ namespace DataAccessLayer.Data
         {
             new Employer
             {
-                CompanyName="Nagarro",
-                CompanyEmail="jobs@nagarro.com",
-                CompanyPassword="1234",
-                Id=1
+                CompanyName = "Nagarro",
+                CompanyEmail = "jobs@nagarro.com",
+                CompanyPassword = "1234",
+                Id = 1
             }
         };
 

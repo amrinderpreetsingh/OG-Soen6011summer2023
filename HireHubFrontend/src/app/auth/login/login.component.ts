@@ -39,7 +39,7 @@ export class LoginComponent implements OnInit {
       this.student.password = this.password;
 
       this.authService.login_student(this.student).subscribe(res => {
-        if(res == null) {
+        if(res == false) {
           alert("Uername or password is wrong");
           this.ngOnInit();
     }else {

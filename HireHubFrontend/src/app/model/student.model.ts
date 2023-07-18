@@ -1,8 +1,9 @@
 export class Student {
-    id : string = '';
-    username : string = '';
+    id : number | undefined ;
     password : string = '';
-    token : string = '';
     school : string= '';
     email: string= ''
+    qualification: string= ''
+    experience : string= ''
+    name: string = ''
 }

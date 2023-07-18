@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PostJobs } from 'src/app/model/post-jobs';
+import { AuthService } from 'src/app/service/auth.service';
 
 @Component({
   selector: 'app-post-job',
@@ -20,7 +21,7 @@ export class PostJobComponent implements OnInit {
 
   postJobs : PostJobs = new PostJobs();
 
-  constructor() { 
+  constructor(private authService:AuthService ) { 
     this.jobTypes = ['Internship', 'Contract', 'Full Time', 'Part Time'];
     this.experiences = [0,1,2,3,4,5,6,7,8]
   }
@@ -34,7 +35,7 @@ export class PostJobComponent implements OnInit {
     this.jobType='';
     this.description='';
     this.id = undefined;
-    localStorage.setItem('user','jobposter@poster.com')
+    localStorage.setItem('user','jobs@nagarro.com')
   }
  submit_job(){
  this.postJobs.id= this.id;
@@ -47,7 +48,13 @@ export class PostJobComponent implements OnInit {
  this.postJobs.type = this.jobType;
  console.log(this.postJobs)
 
-
+ this.authService.post_jobs(this.postJobs).subscribe(res => {
+  console.log(res)
+  if(res==true){
+    alert("Job Posted")
+    this.ngOnInit()
+  }
+ })
 }
 }
 

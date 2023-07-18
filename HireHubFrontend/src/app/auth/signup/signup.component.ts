@@ -1,3 +1,4 @@
+import { ThisReceiver } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Employer } from 'src/app/model/employer.model';
@@ -18,6 +19,7 @@ export class SignupComponent implements OnInit {
   school : string= '';
   company : string = '';
   experience : string= '';
+  qualification: string= '';
   email: string='';
   location: string= '';
   about: string= '';
@@ -40,6 +42,8 @@ export class SignupComponent implements OnInit {
     this.email='';
     this.about='';
     this.location='';
+    this.qualification = '';
+    this.experience = '';
   }
 
   roles : string[];
@@ -52,6 +56,8 @@ export class SignupComponent implements OnInit {
       this.employer.companyEmail= this.email;
       this.employer.address= this.location;
       this.employer.about = this.about;
+
+      console.log(this.employer)
 
       this.authService.signUp_employer(this.employer).subscribe(res => {
         if(res == null) {
@@ -70,9 +76,14 @@ export class SignupComponent implements OnInit {
       })
 
     }else{
-      this.student.username= this.name;
+      this.student.name= this.name;
       this.student.password= this.password;
       this.student.school= this.school;
+      this.student.email= this.email;
+      this.student.qualification= this.qualification;
+      this.student.experience = this.experience;
+
+      console.log(this.student)
 
       this.authService.signUp_student(this.student).subscribe(res => {
         if(res == null) {
