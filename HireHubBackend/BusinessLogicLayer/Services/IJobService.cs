@@ -4,10 +4,8 @@ using DataAccessLayer.Entities;
 
 namespace BusinessLogicLayer.Services
 {
-    public interface IServiceFacade
+    public interface IJobService
     {
-        public bool EmployerSignup(Employer employer);
-        public bool EmployerLogin(string email, string password);
         public bool PostJob(Job job);
         public List<Job> GetJobsPostedByAnEmployer(string email);
     }

@@ -40,5 +40,19 @@ namespace PresentationLayer.Controllers
         {
             return Ok(_serviceFacade.EmployerLogin(email, password));
         }
+
+        [HttpPost]
+        [Route("postjob")]
+        public ActionResult PostJob(Job job)
+        {
+            return Ok(_serviceFacade.PostJob(job));
+        }
+
+        [HttpGet]
+        [Route("getjobs")]
+        public ActionResult GetJobs(string email)
+        {
+            return Ok(_serviceFacade.GetJobsPostedByAnEmployer(email));
+        }
     }
 }
