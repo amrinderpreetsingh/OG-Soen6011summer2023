@@ -24,6 +24,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { ListStudentComponent } from './component/list-student/list-student.component';
+import { StudentJobsComponent } from './component/student-jobs/student-jobs.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { ListStudentComponent } from './component/list-student/list-student.comp
     ListJobsComponent,
     PostJobComponent,
     ListStudentComponent,
+    StudentJobsComponent,
   ],
   imports: [
     BrowserModule,

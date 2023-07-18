@@ -8,6 +8,7 @@ import { ListJobsComponent } from './component/list-jobs/list-jobs.component';
 import { ListStudentComponent } from './component/list-student/list-student.component';
 import { PostJobComponent } from './component/post-job/post-job.component';
 import { StudentDashboardComponent } from './component/student-dashboard/student-dashboard.component';
+import { StudentJobsComponent } from './component/student-jobs/student-jobs.component';
 
 
 const routes: Routes = [
@@ -17,7 +18,8 @@ const routes: Routes = [
   {path:'Employer',component:EmployerDashboardComponent},
   {path:'list-job', component: ListJobsComponent},
   {path:'post-job',component:PostJobComponent},
-  {path:'list-student', component:ListStudentComponent}
+  {path:'list-student', component:ListStudentComponent},
+  {path:'student-jobs', component:StudentJobsComponent}
 ];
 
 @NgModule({

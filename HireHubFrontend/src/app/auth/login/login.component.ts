@@ -44,7 +44,7 @@ export class LoginComponent implements OnInit {
           this.ngOnInit();
     }else {
       console.log("Login successful");
-      localStorage.setItem("token",res.token);
+      localStorage.setItem("student_email",this.email);
 
         this.route.navigate(['/Student']);
     }
@@ -63,6 +63,7 @@ export class LoginComponent implements OnInit {
         this.ngOnInit();
   }else {
     console.log("Login successful");
+    localStorage.setItem("employer_email",this.email);
       this.route.navigate(['/Employer']);
   }
 }, err => {
