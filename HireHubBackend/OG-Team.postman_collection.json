@@ -1,0 +1,25 @@
+{
+	"info": {
+		"_postman_id": "f8f20c4a-5c0c-42b1-9d96-935f4cc3d644",
+		"name": "OG-Team",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Employer/Login",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Employer/SignUp",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}

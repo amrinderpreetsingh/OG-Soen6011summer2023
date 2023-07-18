@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using BusinessLogicLayer.Services;
+using DataAccessLayer.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -25,8 +27,11 @@ namespace PresentationLayer
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors();
             services.AddControllers();
-            //services.AddScoped<IHomeService, HomeService>();
+            services.AddScoped<IServiceFacade, ServiceFacade>();
+            services.AddScoped<IEmployerService, EmployerService>();
+            services.AddSingleton<IDatabaseDataService, DatabaseDataService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -42,6 +47,11 @@ namespace PresentationLayer
             app.UseRouting();
 
             app.UseAuthorization();
+
+            app.UseCors(options =>
+            {
+                options.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
+            });
 
             app.UseEndpoints(endpoints =>
             {
