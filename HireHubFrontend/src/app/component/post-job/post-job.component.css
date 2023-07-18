@@ -1,0 +1,33 @@
+mat-sidenav-container {
+    height: 100%;
+  }
+  
+  mat-sidenav mat-nav-list {
+    .menu-item {
+      margin-left: 8px;
+    }
+  
+    .chevron-button {
+      transition: 300ms ease-in-out;
+      transform: rotate(0deg);
+    }
+  
+    .chevron-button.rotated {
+      transform: rotate(180deg);
+    }
+  }
+  label { font-size: 1.1em } 
+  
+  .button-alignment{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center
+  }
+  .custom-margin {
+    margin-top: 20px; /* Adjust the value as needed */
+  }

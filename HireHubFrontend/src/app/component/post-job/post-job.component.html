@@ -1,1 +1,140 @@
-<p>post-job works!</p>
+<mat-sidenav-container autosize>
+    <mat-sidenav #sidenav mode="side" opened="isExpanded">
+      <mat-nav-list>
+  
+        <mat-list-item (click)="isExpanded = !isExpanded">
+          <mat-icon mat-list-icon class="chevron-button" [ngClass]="{ rotated: isExpanded }">chevron_right
+          </mat-icon>
+        </mat-list-item>
+        <mat-list-item [routerLink]="'/post-job'">
+          <mat-icon mat-list-icon>important_devices</mat-icon>
+          <span *ngIf="isExpanded" class="menu-item">Post Jobs</span>
+        </mat-list-item>
+  
+        <mat-list-item [routerLink]="'/list-job'">
+          <mat-icon mat-list-icon>supervisor_account</mat-icon>
+          <span *ngIf="isExpanded" class="menu-item">List Jobs</span>
+        </mat-list-item>
+  
+      </mat-nav-list>
+    </mat-sidenav>
+  
+    <!-- Content - rendered Content for the current router path into the <router-outlet>, e.g. /dashboard or /info-->
+    <mat-sidenav-content>
+         
+      <mat-toolbar color="primary">
+        <h4>Employer Dashboard</h4>
+      </mat-toolbar>
+      
+      <!-- <div class="container-fluid">
+        <div class="row justify-content-center">
+          <div class="col-md-8 custom-margin" style="align-items: center;">
+      <form #userForm="ngForm">
+        <div class="form-group">
+          <label for="floatingPassword"  class="col-sm-3 control-label">Job Title </label>
+          <div class="col-sm-9">
+          <input type="text" style="margin-top: 10px;" class="form-control" id="jobtitle" name="jobTitle" placeholder="Title of the job" [(ngModel)]="jobTitle">
+        </div></div>
+
+        <div class="form-group">
+            <label for="floatingPassword" style="margin-top: 10px;">Skills</label>
+            <input type="text" style="margin-top: 10px;" class="form-control" id="skills" placeholder="Skills" name="skills" [(ngModel)]="skills">
+          </div>
+
+          <div class="form-group">
+            <label for="exampleFormControlInput1">Roles and Responsibilities</label>
+            <input type="text" class="form-control" id="roles" placeholder="Roles" name="roles" [(ngModel)]="roles">
+          </div>
+
+          <div class="form-group">
+          <label for="exampleFormControlSelect1">Job Type</label>
+          <select class="form-control" id="jobtype" name="jobtype" [(ngModel)]="jobType">
+            <option value="option2" selected> Select one</option>
+            <option>Internship</option>
+            <option>Permament</option>
+            <option>Contract</option>
+            <option>Full-Time</option>
+            <option>Part-Time</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="exampleFormControlSelect1">Experience</label>
+          <select class="form-control" id="experience" name="experience" [(ngModel)]="experience">
+            <option value="option2" selected> Select one</option>
+            <option>0</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+            <option>7</option>
+            <option>8</option>
+            <option>9</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="exampleFormControlTextarea1">Description </label>
+          <textarea class="form-control" id="description" rows="3" name="description" [(ngModel)]="description"></textarea>
+        </div>
+      </form>
+       -->
+       
+        <div class="container">
+            <div class=" col-md-8">
+                <form action="" class="mt-3 p-5 align-self-center" >
+                    <div class="form-floating mb-3">
+                      <input type="text" class="form-control" id="jobtitle" name="jobTitle" placeholder="Title of the job" [(ngModel)]="jobTitle" >
+                      <label for="floatingInput">Job Title</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                      <input type="text" class="form-control" id="skills" placeholder="Skills" name="skills" [(ngModel)]="skills" >
+                      <label for="floatingInput">Skills</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="roles" placeholder="Roles" name="roles" [(ngModel)]="roles" >
+                        <label for="floatingInput">Roles and Responsibilities</label>
+                      </div>
+                    <div class="form-floating mb-3">
+                      <select class="form-select" id="floatingSelect" aria-label="jobType" name="jobType" [(ngModel)]="jobType" >
+                        <option *ngFor="let j of jobTypes" [value]="j">{{j}}</option>
+                      </select>
+                      <label for="floatingSelect">Role</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <select class="form-select" id="floatingSelect" aria-label="experience" name="experience" [(ngModel)]="experience" >
+                          <option *ngFor="let e of experiences" [value]="e">{{e}}</option>
+                        </select>
+                        <label for="floatingSelect">Experience</label>
+                      </div>
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="description" placeholder="description" name="description" [(ngModel)]="description" >
+                        <label for="floatingInput">Description</label>
+                      </div>
+                    <div class="button-alignment">
+                    <div class="col-md-8 justify-content-center">
+                    <button class="btn btn-primary" (click)="submit_job()"> Submit </button>
+                    </div>
+                </div>
+                  </form>
+                  
+            </div>
+            
+        </div>
+
+
+
+
+
+
+
+
+      <div id="post-job">
+        <!-- Post Jobs section content -->
+      </div>
+      <div id="list-job">
+        <!-- List Jobs section content -->
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
