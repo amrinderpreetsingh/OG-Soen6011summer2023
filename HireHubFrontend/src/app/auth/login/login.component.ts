@@ -58,13 +58,11 @@ export class LoginComponent implements OnInit {
     this.employer.companyPassword = this.password;
 
     this.authService.login_employer(this.employer).subscribe(res => {
-      if(res == null) {
+      if(res == false) {
         alert("Uername or password is wrong");
         this.ngOnInit();
   }else {
     console.log("Login successful");
-    localStorage.setItem("token",res.token);
-
       this.route.navigate(['/Employer']);
   }
 }, err => {
