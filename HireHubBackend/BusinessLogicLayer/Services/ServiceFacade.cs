@@ -50,5 +50,10 @@ namespace BusinessLogicLayer.Services
         {
             return _employerService.GetStudents();
         }
+
+        public List<Job> GetAllJobsForStudent()
+        {
+            return _studentService.GetAllJobs();
+        }
     }
 }

@@ -177,6 +177,14 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "Student/GetAllJobs",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
 		}
 	]
 }
