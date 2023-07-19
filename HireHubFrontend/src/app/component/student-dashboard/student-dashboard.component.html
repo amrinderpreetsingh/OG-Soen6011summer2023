@@ -1,1 +1,34 @@
-<p>student-dashboard works!</p>
+<mat-sidenav-container autosize>
+  <mat-sidenav #sidenav mode="side" opened="isExpanded">
+    <mat-nav-list>
+
+      <mat-list-item (click)="isExpanded = !isExpanded">
+        <mat-icon mat-list-icon class="chevron-button" [ngClass]="{ rotated: isExpanded }">chevron_right
+        </mat-icon>
+      </mat-list-item>
+      <mat-list-item [routerLink]="'/student-jobs'">
+        <mat-icon mat-list-icon>important_devices</mat-icon>
+        <span *ngIf="isExpanded" class="menu-item">Job Openings</span>
+      </mat-list-item>
+
+      
+
+
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <!-- Content - rendered Content for the current router path into the <router-outlet>, e.g. /dashboard or /info-->
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <h4>Student Dashboard</h4>
+      <span class="example-spacer "></span>
+      <button mat-raised-button (click)="logout()" color="warn">Logout</button>
+    </mat-toolbar>
+    <div id="post-job">
+      <!-- Post Jobs section content -->
+    </div>
+    <div id="list-job">
+      <!-- List Jobs section content -->
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

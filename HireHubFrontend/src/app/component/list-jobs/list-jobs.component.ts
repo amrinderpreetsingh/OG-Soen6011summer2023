@@ -26,7 +26,7 @@ export class ListJobsComponent implements OnInit {
   
 
   list_all_jobs(){
-     this.authService.getJobList().subscribe(res=>{
+     this.authService.getJobsPostedByAnEmployer().subscribe(res=>{
       console.log(res)
       this.job_data= res;
       this.dataSource = new MatTableDataSource<Jobs>(this.job_data)
