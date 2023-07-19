@@ -22,6 +22,9 @@ import { PostJobComponent } from './component/post-job/post-job.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import { ListStudentComponent } from './component/list-student/list-student.component';
+import { StudentJobsComponent } from './component/student-jobs/student-jobs.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +35,9 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     StudentDashboardComponent,
     EmployerDashboardComponent,
     ListJobsComponent,
-    PostJobComponent
+    PostJobComponent,
+    ListStudentComponent,
+    StudentJobsComponent,
   ],
   imports: [
     BrowserModule,
@@ -48,7 +53,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     NoopAnimationsModule,
     MatFormFieldModule,
     MatTableModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatSortModule
   ],
   providers: [],
   bootstrap: [AppComponent]

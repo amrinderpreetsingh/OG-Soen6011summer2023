@@ -7,5 +7,8 @@ namespace DataAccessLayer.Data
     public interface IDatabaseDataService
     {
         public List<Employer> GetAllEmployers();
+        public bool AddJob(Job job);
+        public List<Job> GetAllJobs();
+        public List<Student> GetAllStudents();
     }
 }

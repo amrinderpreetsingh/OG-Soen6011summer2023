@@ -38,14 +38,22 @@
                     <input type="text" class="form-control" id="floatingInput" placeholder="School" name="school" [(ngModel)]="school">
                     <label for="floatingInput">School</label>
                   </div>
+                  <div *ngIf="role === 'Student'" class="form-floating mb-3">
+                    <input type="text" class="form-control" id="floatingInput" placeholder="qualification" name="qualification" [(ngModel)]="qualification">
+                    <label for="floatingInput">Qualification</label>
+                  </div>
                   <div *ngIf="role === 'Employer'" class="form-floating mb-3">
                     <input type="text" class="form-control" id="floatingInput" placeholder="Company" name="company" [(ngModel)]="location">
                     <label for="floatingInput">Location</label>
                 </div>
-                <div  *ngIf="role === 'Employer'" class="form-floating mb-3">
-                  <input type="text" class="form-control" id="floatingInput" placeholder="Experience" name="experience" [(ngModel)]="about">
-                  <label for="floatingInput">About</label>
+                <div *ngIf="role === 'Student'" class="form-floating mb-3">
+                  <input type="text" class="form-control" id="floatingInput" placeholder="Experience" name="experience" [(ngModel)]="experience">
+                  <label for="floatingInput">Experience</label>
               </div>
+              <div *ngIf="role === 'Employer'" class="form-floating mb-3">
+                <input type="text" class="form-control" id="floatingInput" placeholder="about" name="about" [(ngModel)]="about">
+                <label for="floatingInput">About</label>
+            </div>
                   <div class="login-options">
                     <a routerLink="/" class="text-warn" style="text-decoration: none;">Log In ? </a>
                     <button class="btn btn-outline-primary me-md-2" type="button" (click)="signup()" >Register</button>

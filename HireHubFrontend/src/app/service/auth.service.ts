@@ -3,45 +3,66 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Employer } from '../model/employer.model';
 import { Student } from '../model/student.model';
-import { User } from '../model/user';
+import { Jobs } from '../model/jobs';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  loginUrl : string = '';
-  signUpUrl : string = '';
+  employerLoginUrl : string = '';
+  studentLoginUrl : string = '';
+  employerSignUpUrl : string = '';
+  studentSignUpUrl : string = '';
+  url:string='';
+  postJobUrl:string=' '
+  getJobsUrl:string=' '
+  getStudentUrl:string=''
 
   constructor(private http : HttpClient) {
 
-    this.loginUrl = "http://localhost:5001/employer/login";
-    this.signUpUrl = "http://localhost:5001/employer/signup";
-
+    this.employerLoginUrl = "http://localhost:5001/employer/login";
+    this.employerSignUpUrl = "http://localhost:5001/employer/signup";
+    this.url= "https://jsonplaceholder.typicode.com/todos";
+    this.postJobUrl = "http://localhost:5001/employer/postjob"
+    this.getJobsUrl="http://localhost:5001/employer/getjobs";
+    this.studentSignUpUrl="http://localhost:5001/student/signup"
+    this.studentLoginUrl="http://localhost:5001/student/login"
+    this.getStudentUrl= "http://localhost:5001/employer/getstudents"
+    
   }
 
-  login_student(student :Student) : Observable<any> {
+  loginStudent(student :Student) : Observable<any> {
     console.log(student)
-    return this.http.post<any>(this.loginUrl,student);
+    return this.http.get<any>(this.studentLoginUrl+"?email="+student.email+"&password="+student.password);
   }
 
-  login_employer(employer :Employer) : Observable<any> {
+  loginEmployer(employer :Employer) : Observable<any> {
     console.log(employer)
-    return this.http.get<any>(this.loginUrl+"?email="+employer.companyEmail+"&password="+employer.companyPassword);
+    return this.http.get<any>(this.employerLoginUrl+"?email="+employer.companyEmail+"&password="+employer.companyPassword);
   }
 
-  signUp(user : User) : Observable<any> {
-    console.log(user)
-    return this.http.post<any>(this.signUpUrl,user);
-  }
-
-  signUp_student(student : Student) : Observable<any> {
+  signUpStudent(student : Student) : Observable<any> {
     console.log(student)
-    return this.http.post<any>(this.signUpUrl,student);
+    return this.http.post<any>(this.studentSignUpUrl,student);
   }
 
-  signUp_employer(employer : Employer) : Observable<any> {
+  signUpEmployer(employer : Employer) : Observable<any> {
     console.log(employer)
-    return this.http.post<any>(this.signUpUrl,employer);
+    return this.http.post<any>(this.employerSignUpUrl,employer);
+  }
+
+  getJobList():Observable<any>{
+    
+    return this.http.get<Jobs>(this.getJobsUrl+ "?email="+ localStorage.getItem('employer_email'))
+  }
+
+  postJobs(job:Jobs):Observable<any>{
+    return this.http.post(this.postJobUrl,job)
+  }
+
+  getStudentList():Observable<any>{
+    return this.http.get<Student>(this.getStudentUrl)
   }
 }

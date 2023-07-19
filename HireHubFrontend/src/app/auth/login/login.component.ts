@@ -38,13 +38,13 @@ export class LoginComponent implements OnInit {
       this.student.email = this.email;
       this.student.password = this.password;
 
-      this.authService.login_student(this.student).subscribe(res => {
-        if(res == null) {
+      this.authService.loginStudent(this.student).subscribe(res => {
+        if(res == false) {
           alert("Uername or password is wrong");
           this.ngOnInit();
     }else {
       console.log("Login successful");
-      localStorage.setItem("token",res.token);
+      localStorage.setItem("student_email",this.email);
 
         this.route.navigate(['/Student']);
     }
@@ -57,14 +57,13 @@ export class LoginComponent implements OnInit {
     this.employer.companyEmail = this.email;
     this.employer.companyPassword = this.password;
 
-    this.authService.login_employer(this.employer).subscribe(res => {
-      if(res == null) {
+    this.authService.loginEmployer(this.employer).subscribe(res => {
+      if(res == false) {
         alert("Uername or password is wrong");
         this.ngOnInit();
   }else {
     console.log("Login successful");
-    localStorage.setItem("token",res.token);
-
+    localStorage.setItem("employer_email",this.email);
       this.route.navigate(['/Employer']);
   }
 }, err => {
