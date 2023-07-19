@@ -19,6 +19,7 @@ export class AuthService {
   postJobUrl:string=' '
   getJobsUrl:string=' '
   getStudentUrl:string=''
+  getAllJobsUrl:string=''
 
   constructor(private http : HttpClient) {
 
@@ -30,6 +31,7 @@ export class AuthService {
     this.studentSignUpUrl="http://localhost:5001/student/signup"
     this.studentLoginUrl="http://localhost:5001/student/login"
     this.getStudentUrl= "http://localhost:5001/employer/getstudents"
+    this.getAllJobsUrl="http://localhost:5001/student/getAllJobs"
     
   }
 
@@ -53,7 +55,7 @@ export class AuthService {
     return this.http.post<any>(this.employerSignUpUrl,employer);
   }
 
-  getJobList():Observable<any>{
+  getJobsPostedByAnEmployer():Observable<any>{
     
     return this.http.get<Jobs>(this.getJobsUrl+ "?email="+ localStorage.getItem('employer_email'))
   }
@@ -64,5 +66,9 @@ export class AuthService {
 
   getStudentList():Observable<any>{
     return this.http.get<Student>(this.getStudentUrl)
+  }
+  
+  getAllJobs():Observable<any>{
+    return this.http.get<Jobs>(this.getAllJobsUrl)
   }
 }

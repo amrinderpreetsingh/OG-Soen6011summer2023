@@ -22,14 +22,14 @@ namespace DataAccessLayer.Data
         {
             new Job
             {
-                Title="",
+                Title="Engineer",
                 Id=1,
-                Description="",
-                Experience="",
-                Role="",
-                Skills="",
-                PostedBy="",
-                Type="" }
+                Description="hardworker",
+                Experience="2",
+                Role="Full-Time",
+                Skills="Java",
+                PostedBy="jobs@nagarro.com",
+                Type="Intern" }
         };
 
         private List<Student> _students = new List<Student>()
