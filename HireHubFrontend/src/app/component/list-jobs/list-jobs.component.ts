@@ -26,7 +26,7 @@ export class ListJobsComponent implements OnInit {
   
 
   list_all_jobs(){
-     this.authService.get_job_list().subscribe(res=>{
+     this.authService.getJobList().subscribe(res=>{
       console.log(res)
       this.job_data= res;
       this.dataSource = new MatTableDataSource<Jobs>(this.job_data)
@@ -41,4 +41,9 @@ export class ListJobsComponent implements OnInit {
   deleteJob(id:any){
     console.log("id :", id)
   }
+
+  logout(){
+    localStorage.clear();
+    this.route.navigate(['/']);
+   }
 }

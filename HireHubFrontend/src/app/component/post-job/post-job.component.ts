@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Jobs } from 'src/app/model/jobs';
 import { AuthService } from 'src/app/service/auth.service';
 
@@ -21,7 +22,7 @@ export class PostJobComponent implements OnInit {
 
   postJobs : Jobs = new Jobs();
 
-  constructor(private authService:AuthService ) { 
+  constructor(private authService:AuthService , private route: Router) { 
     this.jobTypes = ['Internship', 'Contract', 'Full Time', 'Part Time'];
     this.experiences = [0,1,2,3,4,5,6,7,8]
   }
@@ -39,7 +40,7 @@ export class PostJobComponent implements OnInit {
   }
  submit_job(){
  this.postJobs.id= this.id;
- this.postJobs.postedBy = localStorage.getItem('user');
+ this.postJobs.postedBy = localStorage.getItem('employer_email');
  this.postJobs.description = this.description;
  this.postJobs.experience = this.experience;
  this.postJobs.role = this.roles;
@@ -48,7 +49,7 @@ export class PostJobComponent implements OnInit {
  this.postJobs.type = this.jobType;
  console.log(this.postJobs)
 
- this.authService.post_jobs(this.postJobs).subscribe(res => {
+ this.authService.postJobs(this.postJobs).subscribe(res => {
   console.log(res)
   if(res==true){
     alert("Job Posted")
@@ -56,5 +57,9 @@ export class PostJobComponent implements OnInit {
   }
  })
 }
+logout(){
+  localStorage.clear();
+  this.route.navigate(['/']);
+ }
 }
 

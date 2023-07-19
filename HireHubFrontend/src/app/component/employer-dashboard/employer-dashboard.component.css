@@ -16,3 +16,7 @@ mat-sidenav mat-nav-list {
     transform: rotate(180deg);
   }
 }
+
+.example-spacer {
+  flex: 1 1 auto;
+}

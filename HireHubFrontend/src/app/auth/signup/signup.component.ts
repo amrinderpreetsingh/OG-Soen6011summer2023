@@ -58,7 +58,7 @@ export class SignupComponent implements OnInit {
 
       console.log(this.employer)
 
-      this.authService.signUp_employer(this.employer).subscribe(res => {
+      this.authService.signUpEmployer(this.employer).subscribe(res => {
         if(res == null) {
           alert("Registration failed");
           this.ngOnInit();
@@ -84,7 +84,7 @@ export class SignupComponent implements OnInit {
 
       console.log(this.student)
 
-      this.authService.signUp_student(this.student).subscribe(res => {
+      this.authService.signUpStudent(this.student).subscribe(res => {
         if(res == null) {
           alert("Registration failed");
           this.ngOnInit();

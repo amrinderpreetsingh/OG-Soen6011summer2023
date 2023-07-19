@@ -24,12 +24,15 @@ export class ListStudentComponent implements OnInit {
   
 
   list_all_students(){
-     this.authService.get_student_list().subscribe(res=>{
+     this.authService.getStudentList().subscribe(res=>{
       console.log(res)
       this.student_data= res;
       this.dataSource = new MatTableDataSource<Student>(this.student_data)
       this.dataSource.paginator = this.paginator;
      })
   }
-
+  logout(){
+    localStorage.clear();
+    this.route.navigate(['/']);
+   }
 }

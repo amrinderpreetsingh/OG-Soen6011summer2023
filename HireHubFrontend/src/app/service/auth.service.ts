@@ -30,37 +30,39 @@ export class AuthService {
     this.studentSignUpUrl="http://localhost:5001/student/signup"
     this.studentLoginUrl="http://localhost:5001/student/login"
     this.getStudentUrl= "http://localhost:5001/employer/getstudents"
+    
   }
 
-  login_student(student :Student) : Observable<any> {
+  loginStudent(student :Student) : Observable<any> {
     console.log(student)
     return this.http.get<any>(this.studentLoginUrl+"?email="+student.email+"&password="+student.password);
   }
 
-  login_employer(employer :Employer) : Observable<any> {
+  loginEmployer(employer :Employer) : Observable<any> {
     console.log(employer)
     return this.http.get<any>(this.employerLoginUrl+"?email="+employer.companyEmail+"&password="+employer.companyPassword);
   }
 
-  signUp_student(student : Student) : Observable<any> {
+  signUpStudent(student : Student) : Observable<any> {
     console.log(student)
     return this.http.post<any>(this.studentSignUpUrl,student);
   }
 
-  signUp_employer(employer : Employer) : Observable<any> {
+  signUpEmployer(employer : Employer) : Observable<any> {
     console.log(employer)
     return this.http.post<any>(this.employerSignUpUrl,employer);
   }
 
-  get_job_list():Observable<any>{
-    return this.http.get<Jobs>(this.getJobsUrl+"?email=jobs@nagarro.com")
+  getJobList():Observable<any>{
+    
+    return this.http.get<Jobs>(this.getJobsUrl+ "?email="+ localStorage.getItem('employer_email'))
   }
 
-  post_jobs(job:Jobs):Observable<any>{
+  postJobs(job:Jobs):Observable<any>{
     return this.http.post(this.postJobUrl,job)
   }
 
-  get_student_list():Observable<any>{
+  getStudentList():Observable<any>{
     return this.http.get<Student>(this.getStudentUrl)
   }
 }
