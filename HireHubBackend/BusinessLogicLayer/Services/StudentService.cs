@@ -1,11 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using DataAccessLayer.Data;
 using DataAccessLayer.Entities;
 
 namespace BusinessLogicLayer.Services
 {
-    public class StudentService:IStudentService
+    public class StudentService : IStudentService
     {
         private readonly IDatabaseDataService _databaseDataService;
 
@@ -14,7 +15,7 @@ namespace BusinessLogicLayer.Services
             _databaseDataService = databaseDataService;
         }
 
-        public bool Login(string email,string password)
+        public bool Login(string email, string password)
         {
             var students = _databaseDataService.GetAllStudents();
             if (students.Exists(x => x.Email.ToLower().Equals(email.ToLower()) && x.Password.Equals(password)))
@@ -34,6 +35,11 @@ namespace BusinessLogicLayer.Services
             employer.Id = students.Max(x => x.Id) + 1;
             students.Add(employer);
             return true;
+        }
+
+        public List<Job> GetAllJobs()
+        {
+            return _databaseDataService.GetAllJobs();
         }
     }
 }
