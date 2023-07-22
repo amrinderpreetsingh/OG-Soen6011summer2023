@@ -10,5 +10,7 @@ namespace DataAccessLayer.Data
         public bool AddJob(Job job);
         public List<Job> GetAllJobs();
         public List<Student> GetAllStudents();
+        public Student GetStudent(string studentEmail);
+        public Job GetJob(int id);
     }
 }

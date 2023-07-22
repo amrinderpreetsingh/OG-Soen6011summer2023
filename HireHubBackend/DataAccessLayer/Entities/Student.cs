@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+
 namespace DataAccessLayer.Entities
 {
     public class Student
@@ -10,5 +12,11 @@ namespace DataAccessLayer.Entities
         public string Qualification { get; set; }
         public string School { get; set; }
         public string Experience { get; set; }
+        public List<int> JobsApplied { get; set; }
+
+        public Student()
+        {
+            JobsApplied = new List<int>();
+        }
     }
 }

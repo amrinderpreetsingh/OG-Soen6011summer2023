@@ -67,5 +67,16 @@ namespace DataAccessLayer.Data
         {
             return _students;
         }
+
+        public Student GetStudent(string studentEmail)
+        {
+            var student = _students.First(x => x.Email.Equals(studentEmail));
+            return student;
+        }
+
+        public Job GetJob(int id)
+        {
+            return _jobs.First(x => x.Id == id);
+        }
     }
 }

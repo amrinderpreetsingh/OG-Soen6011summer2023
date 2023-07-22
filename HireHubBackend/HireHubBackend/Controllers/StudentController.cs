@@ -41,5 +41,12 @@ namespace PresentationLayer.Controllers
         {
             return Ok(_serviceFacade.GetAllJobsForStudent());
         }
+
+        [HttpGet]
+        [Route("ApplyJob")]
+        public ActionResult ApplyJob(string email,int jobId)
+        {
+            return Ok(_serviceFacade.StudentJobApply(email,jobId));
+        }
     }
 }

@@ -14,5 +14,6 @@ namespace BusinessLogicLayer.Services
         public bool StudentLogin(string email, string password);
         public List<Student> GetStudents();
         public List<Job> GetAllJobsForStudent();
+        public bool StudentJobApply(string studentEmail, int jobId);
     }
 }

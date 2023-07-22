@@ -41,5 +41,14 @@ namespace BusinessLogicLayer.Services
         {
             return _databaseDataService.GetAllJobs();
         }
+
+        public bool ApplyJob(string studentEmail, int JobId)
+        {
+            var student = _databaseDataService.GetStudent(studentEmail);
+            var job = _databaseDataService.GetJob(JobId);
+            job.StudentsApplied.Add(student.Id);
+            student.JobsApplied.Add(JobId);
+            return true;
+        }
     }
 }

@@ -9,5 +9,6 @@ namespace BusinessLogicLayer.Services
         public bool Login(string email, string password);
         public bool Signup(Student employer);
         public List<Job> GetAllJobs();
+        public bool ApplyJob(string studentEmail, int JobId);
     }
 }
