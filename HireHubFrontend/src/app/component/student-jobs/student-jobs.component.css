@@ -25,3 +25,53 @@ mat-sidenav-container {
     .example-spacer {
       flex: 1 1 auto;
     }
+  
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px; 
+  margin-left: 20px;
+}
+
+.card {
+  width: 300px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  height:max-content;
+  max-height: 400px;
+  overflow: hidden;}
+
+
+.card-content {
+  padding: 16px;
+}
+
+h3 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+p {
+  margin: 8px 0;
+  font-size: 14px;
+}
+
+
+.example-card {
+  max-width: 300px;
+}
+
+.custom-card-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; 
+  padding: 8px;
+}
+
+.fixed-height-content{
+  min-height: 200px;
+  max-height: 200px;
+  overflow:scroll;
+}
