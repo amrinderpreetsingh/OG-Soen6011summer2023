@@ -55,5 +55,10 @@ namespace BusinessLogicLayer.Services
         {
             return _studentService.GetAllJobs();
         }
+
+        public bool StudentJobApply(string studentEmail, int jobId)
+        {
+            return _studentService.ApplyJob(studentEmail, jobId);
+        }
     }
 }

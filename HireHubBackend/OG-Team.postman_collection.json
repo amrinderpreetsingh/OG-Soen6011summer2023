@@ -182,6 +182,26 @@
 			"name": "Student/GetAllJobs",
 			"request": {
 				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5001/student/getAllJobs",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"student",
+						"getAllJobs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Student/ApplyJob",
+			"request": {
+				"method": "GET",
 				"header": []
 			},
 			"response": []
