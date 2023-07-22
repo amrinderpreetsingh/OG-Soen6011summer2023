@@ -8,5 +8,7 @@ namespace BusinessLogicLayer.Services
     {
         public bool PostJob(Job job);
         public List<Job> GetJobsPostedByAnEmployer(string email);
+        public bool UpdateJob(Job updatedJob);
+        public bool DeleteJob(int id);
     }
 }

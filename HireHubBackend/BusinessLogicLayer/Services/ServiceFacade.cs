@@ -60,5 +60,15 @@ namespace BusinessLogicLayer.Services
         {
             return _studentService.ApplyJob(studentEmail, jobId);
         }
+
+        public bool UpdateJob(Job job)
+        {
+            return _jobService.UpdateJob(job);
+        }
+
+        public bool DeleteJob(int id)
+        {
+            return _jobService.DeleteJob(id);
+        }
     }
 }
