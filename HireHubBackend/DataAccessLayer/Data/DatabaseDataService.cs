@@ -70,13 +70,13 @@ namespace DataAccessLayer.Data
 
         public Student GetStudent(string studentEmail)
         {
-            var student = _students.First(x => x.Email.Equals(studentEmail));
+            var student = _students.FirstOrDefault(x => x.Email.Equals(studentEmail));
             return student;
         }
 
         public Job GetJob(int id)
         {
-            return _jobs.First(x => x.Id == id);
+            return _jobs.FirstOrDefault(x => x.Id == id);
         }
     }
 }

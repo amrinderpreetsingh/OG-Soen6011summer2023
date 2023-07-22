@@ -46,6 +46,10 @@ namespace BusinessLogicLayer.Services
         {
             var student = _databaseDataService.GetStudent(studentEmail);
             var job = _databaseDataService.GetJob(JobId);
+            if(student==null || job == null)
+            {
+                return false;
+            }
             job.StudentsApplied.Add(student.Id);
             student.JobsApplied.Add(JobId);
             return true;
