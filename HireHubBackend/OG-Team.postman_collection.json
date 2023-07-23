@@ -179,12 +179,12 @@
 			"response": []
 		},
 		{
-			"name": "Student/GetAllJobs",
+			"name": "Student/GetAllAvailableJobs",
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:5001/student/getAllJobs",
+					"raw": "http://localhost:5001/student/getAllAvailableJobs?email=gagan@hirehub.com",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -192,7 +192,13 @@
 					"port": "5001",
 					"path": [
 						"student",
-						"getAllJobs"
+						"getAllAvailableJobs"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "gagan@hirehub.com"
+						}
 					]
 				}
 			},

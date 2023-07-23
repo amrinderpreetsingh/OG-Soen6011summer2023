@@ -49,5 +49,10 @@ namespace BusinessLogicLayer.Services
         {
             return _databaseDataService.DeleteJob(id);
         }
+
+        public List<Job> GetAllJobs()
+        {
+            return _databaseDataService.GetAllJobs();
+        }
     }
 }
