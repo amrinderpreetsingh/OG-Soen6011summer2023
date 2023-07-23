@@ -54,5 +54,20 @@ namespace BusinessLogicLayer.Services
         {
             return _databaseDataService.GetAllJobs();
         }
+
+        public List<Job> GetAppliedJobsByStudent(string email)
+        {
+            var allJobs = _databaseDataService.GetAllJobs();
+            var student = _databaseDataService.GetStudent(email);
+            var appliedJobs = new List<Job>();
+            foreach (var job in allJobs)
+            {
+                if (job.StudentsApplied.Contains(student.Id))
+                {
+                    appliedJobs.Add(job);
+                }
+            }
+            return appliedJobs;
+        }
     }
 }
