@@ -5,35 +5,62 @@ import { Router } from '@angular/router';
 import { Jobs } from 'src/app/model/jobs';
 import { Student } from 'src/app/model/student.model';
 import { AuthService } from 'src/app/service/auth.service';
+import { MatCardModule } from '@angular/material/card';
+import Swal from 'sweetalert2'
 
 @Component({
   selector: 'app-student-jobs',
   templateUrl: './student-jobs.component.html',
-  styleUrls: ['./student-jobs.component.css']
+  styleUrls: ['./student-jobs.component.css'],
 })
 export class StudentJobsComponent implements OnInit {
 
   @ViewChild(MatPaginator) paginator !: MatPaginator;
-  constructor(private authService : AuthService, private route : Router) { }
+  constructor(private authService: AuthService, private route: Router) { }
   isExpanded: boolean = false;
   ngOnInit(): void {
     this.listAllJobs()
   }
-  displayedColumns: string[] = ['id', 'title', 'skills', 'role', 'type','experience','description','postedBy'];
+  displayedColumns: string[] = ['id', 'title', 'skills', 'role', 'type', 'experience', 'description', 'postedBy'];
   dataSource: any;
-  job_data:any = [];
-  
+  job_data: any = [];
 
-  listAllJobs(){
-    this.authService.getAllJobs().subscribe(res=>{
-     console.log(res)
-     this.job_data= res;
-     this.dataSource = new MatTableDataSource<Jobs>(this.job_data)
-     this.dataSource.paginator = this.paginator;
+
+
+  listAllJobs() {
+    this.authService.getAllJobs().subscribe(res => {
+      this.job_data = res.map((job: Jobs) => {
+        const companyName = this.extractDomainFromEmail(job.postedBy);
+        return { ...job, companyName: companyName };
+      })
+      console.log(this.job_data);
+
+
     })
- }
- logout(){
-  localStorage.clear();
-  this.route.navigate(['/']);
- }
+  }
+
+  extractDomainFromEmail(email: string): string {
+    const atIndex = email.indexOf('@');
+    const dotIndex = email.lastIndexOf('.');
+
+    if (atIndex !== -1 && dotIndex !== -1 && dotIndex > atIndex) {
+      const domain = email.slice(atIndex + 1, dotIndex);
+      return domain.charAt(0).toUpperCase() + domain.slice(1);
+    }
+
+    return '';
+  }
+  apply_job(data: any) {
+    console.log(data.id);
+    
+  this.authService.applyJob(data.id).subscribe(res=>{
+    Swal.fire('Thank you...', 'Job applied succesfully!', 'success');
+    this.listAllJobs();
+  })
+
+}
+  logout() {
+    localStorage.clear();
+    this.route.navigate(['/']);
+  }
 }

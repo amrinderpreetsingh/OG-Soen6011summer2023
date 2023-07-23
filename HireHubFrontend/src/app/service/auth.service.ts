@@ -20,6 +20,7 @@ export class AuthService {
   getJobsUrl:string=' '
   getStudentUrl:string=''
   getAllJobsUrl:string=''
+  applyJobUrl:string=''
 
   constructor(private http : HttpClient) {
 
@@ -32,6 +33,7 @@ export class AuthService {
     this.studentLoginUrl="http://localhost:5001/student/login"
     this.getStudentUrl= "http://localhost:5001/employer/getstudents"
     this.getAllJobsUrl="http://localhost:5001/student/getAllJobs"
+    this.applyJobUrl= "http://localhost:5001/student/applyjob"
     
   }
 
@@ -70,5 +72,9 @@ export class AuthService {
   
   getAllJobs():Observable<any>{
     return this.http.get<Jobs>(this.getAllJobsUrl)
+  }
+  applyJob(id : number){
+    console.log(localStorage.getItem('student_email'))
+    return this.http.get(this.applyJobUrl+ "?email="+ localStorage.getItem('student_email')+ "&jobId="+id)
   }
 }
