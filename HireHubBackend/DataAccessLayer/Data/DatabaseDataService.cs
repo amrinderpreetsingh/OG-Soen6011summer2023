@@ -138,5 +138,11 @@ namespace DataAccessLayer.Data
         {
             return _jobs.FirstOrDefault(x => x.Id == id);
         }
+
+        public bool DeleteJob(int id)
+        {
+            _jobs.RemoveAll(x => x.Id == id);
+            return true;
+        }
     }
 }
