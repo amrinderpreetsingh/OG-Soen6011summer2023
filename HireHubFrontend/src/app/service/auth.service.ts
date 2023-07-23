@@ -19,8 +19,9 @@ export class AuthService {
   postJobUrl:string=' '
   getJobsUrl:string=' '
   getStudentUrl:string=''
-  getAllJobsUrl:string=''
+  getAllAvailableJobsUrl:string=''
   applyJobUrl:string=''
+  getAppliedJobsUrl:string=''
 
   constructor(private http : HttpClient) {
 
@@ -32,9 +33,9 @@ export class AuthService {
     this.studentSignUpUrl="http://localhost:5001/student/signup"
     this.studentLoginUrl="http://localhost:5001/student/login"
     this.getStudentUrl= "http://localhost:5001/employer/getstudents"
-    this.getAllJobsUrl="http://localhost:5001/student/getAllJobs"
+    this.getAllAvailableJobsUrl="http://localhost:5001/student/getAllAvailableJobs"
     this.applyJobUrl= "http://localhost:5001/student/applyjob"
-    
+    this.getAppliedJobsUrl="http://localhost:5001/student/getAppliedJobs"
   }
 
   loginStudent(student :Student) : Observable<any> {
@@ -71,10 +72,14 @@ export class AuthService {
   }
   
   getAllJobs():Observable<any>{
-    return this.http.get<Jobs>(this.getAllJobsUrl)
+    return this.http.get<Jobs>(this.getAllAvailableJobsUrl+"?email="+ localStorage.getItem('student_email'))
   }
   applyJob(id : number){
     console.log(localStorage.getItem('student_email'))
     return this.http.get(this.applyJobUrl+ "?email="+ localStorage.getItem('student_email')+ "&jobId="+id)
+  }
+
+  getAppliedJobs():Observable<any>{
+    return this.http.get<Jobs>(this.getAppliedJobsUrl+"?email="+ localStorage.getItem('student_email'))
   }
 }

@@ -17,5 +17,6 @@ namespace BusinessLogicLayer.Services
         public bool StudentJobApply(string studentEmail, int jobId);
         public bool UpdateJob(Job job);
         public bool DeleteJob(int id);
+        public List<Job> GetAppliedJobsByStudent(string email);
     }
 }
