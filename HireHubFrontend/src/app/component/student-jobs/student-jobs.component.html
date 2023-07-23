@@ -19,15 +19,6 @@
       <span class="example-spacer "></span>
       <button mat-raised-button (click)="logout()" color="warn">Logout</button>
     </mat-toolbar>
-    <br><br>
-    <!-- <div class="card-container">
-        <div *ngFor="let card of job_data" class="card">
-          <div class="card-content">
-            <h3>{{ card.title }}</h3>
-            <p>{{ card.description }}</p>
-          </div>
-        </div>
-         </div>  -->
 
     <div class="card-container">
       <div *ngFor="let job of job_data" class="card">
@@ -38,19 +29,19 @@
 
           </mat-card-header>
           <mat-divider></mat-divider>
-        
-            <mat-card-content class="fixed-height-content">
-              <br>
-              <p><b>Company : </b>{{job.companyName}}</p>
-              <p><b>Experience : </b>{{job.experience}}</p>
-              <p><b>Skills : </b>{{job.skills}}</p>
-              <p><b>Description : </b>{{job.description}}</p>
-            </mat-card-content>
-         
+
+          <mat-card-content class="fixed-height-content">
+            <br>
+            <p><b>Company : </b>{{job.companyName}}</p>
+            <p><b>Experience : </b>{{job.experience}}</p>
+            <p><b>Skills : </b>{{job.skills}}</p>
+            <p><b>Description : </b>{{job.description}}</p>
+          </mat-card-content>
+
           <mat-divider></mat-divider>
           <mat-card-actions class="custom-card-actions">
             <div class="button-container">
-              <button  mat-raised-button color="primary" (click)="apply_job(job)">Apply</button>
+              <button mat-raised-button color="primary" (click)="apply_job(job)">Apply</button>
             </div>
           </mat-card-actions>
           <mat-card-footer>

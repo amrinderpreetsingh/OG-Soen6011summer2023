@@ -31,6 +31,7 @@ mat-sidenav-container {
   flex-wrap: wrap;
   gap: 25px; 
   margin-left: 20px;
+  overflow:scroll;
 }
 
 .card {
@@ -38,9 +39,9 @@ mat-sidenav-container {
   margin-bottom: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 4px;
-  height:max-content;
+  height:auto;
   max-height: 400px;
-  overflow: hidden;}
+  overflow: scroll}
 
 
 .card-content {
