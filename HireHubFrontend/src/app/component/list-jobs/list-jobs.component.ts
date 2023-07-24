@@ -53,7 +53,7 @@ export class ListJobsComponent implements OnInit {
   deleteJob(id: any) {
     Swal.fire({
       title: 'Are you sure?',
-      text: 'You are about to delete this item!',
+      text: 'You are about to delete this Job Posting',
       icon: 'warning',
       showCancelButton: true,
       confirmButtonColor: '#3085d6',
@@ -67,7 +67,7 @@ export class ListJobsComponent implements OnInit {
         });
         Swal.fire({
           title: 'Deleted!',
-          text: 'The item has been deleted.',
+          text: 'Your Job posting has been deleted.',
           icon: 'success',
         });
       }
