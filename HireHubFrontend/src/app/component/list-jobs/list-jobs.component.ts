@@ -38,15 +38,6 @@ export class ListJobsComponent implements OnInit {
     console.log("id :", id)
   }
 
-  // deleteJob(id:any){
-  //  this.authService.deleteJobEmployer(id).subscribe(res=>{
-  //   console.log(res);
-  //   this.list_all_jobs();
-  //  })
-  // }
-
-
-
   openComponentInNewTab(data: any) {
     const componentRoute = '/list-student';
     const queryParams = { job_id: data.id };
