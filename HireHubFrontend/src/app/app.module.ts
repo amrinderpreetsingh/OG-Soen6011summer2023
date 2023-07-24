@@ -27,6 +27,10 @@ import { ListStudentComponent } from './component/list-student/list-student.comp
 import { StudentJobsComponent } from './component/student-jobs/student-jobs.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { AdminListStudentComponent } from './component/admin-list-student/admin-list-student.component';
+import { AdminListJobsComponent } from './component/admin-list-jobs/admin-list-jobs.component';
+
+
 
 @NgModule({
   declarations: [
@@ -40,6 +44,8 @@ import { MatExpansionModule } from '@angular/material/expansion';
     PostJobComponent,
     ListStudentComponent,
     StudentJobsComponent,
+    AdminListStudentComponent,
+    AdminListJobsComponent,
   ],
   imports: [
     BrowserModule,

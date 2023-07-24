@@ -1,11 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { MatPaginator } from '@angular/material/paginator';
-import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
 import { Jobs } from 'src/app/model/jobs';
-import { Student } from 'src/app/model/student.model';
 import { AuthService } from 'src/app/service/auth.service';
-import { MatCardModule } from '@angular/material/card';
 import Swal from 'sweetalert2'
 
 @Component({
@@ -15,20 +11,18 @@ import Swal from 'sweetalert2'
 })
 export class StudentJobsComponent implements OnInit {
 
-  @ViewChild(MatPaginator) paginator !: MatPaginator;
   constructor(private authService: AuthService, private route: Router) { }
   isExpanded: boolean = false;
   ngOnInit(): void {
     this.listAllJobs()
   }
-  displayedColumns: string[] = ['id', 'title', 'skills', 'role', 'type', 'experience', 'description', 'postedBy'];
-  dataSource: any;
+  
   job_data: any = [];
 
 
 
   listAllJobs() {
-    this.authService.getAllJobs().subscribe(res => {
+    this.authService.getAppliedJobs().subscribe(res => {
       this.job_data = res.map((job: Jobs) => {
         const companyName = this.extractDomainFromEmail(job.postedBy);
         return { ...job, companyName: companyName };

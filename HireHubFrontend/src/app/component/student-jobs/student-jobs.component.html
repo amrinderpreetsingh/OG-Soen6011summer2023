@@ -8,14 +8,14 @@
       </mat-list-item>
       <mat-list-item [routerLink]="'/student-jobs'">
         <mat-icon mat-list-icon>important_devices</mat-icon>
-        <span *ngIf="isExpanded" class="menu-item">Job Openings</span>
+        <span *ngIf="isExpanded" class="menu-item">Applied Jobs</span>
       </mat-list-item>
     </mat-nav-list>
   </mat-sidenav>
 
   <mat-sidenav-content>
     <mat-toolbar color="primary">
-      <h4>Student Dashboard</h4>
+      <button mat-button [routerLink]="'/Student'" ><h4>Student Dashboard</h4> </button> 
       <span class="example-spacer "></span>
       <button mat-raised-button (click)="logout()" color="warn">Logout</button>
     </mat-toolbar>
@@ -41,7 +41,7 @@
           <mat-divider></mat-divider>
           <mat-card-actions class="custom-card-actions">
             <div class="button-container">
-              <button mat-raised-button color="primary" (click)="apply_job(job)">Apply</button>
+              <button mat-stroked-button disabled color="primary" (click)="apply_job(job)">Applied</button>
             </div>
           </mat-card-actions>
           <mat-card-footer>
