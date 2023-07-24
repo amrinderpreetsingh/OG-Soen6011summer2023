@@ -69,5 +69,16 @@ namespace BusinessLogicLayer.Services
             }
             return appliedJobs;
         }
+
+        public List<Student> GetListOfAppliedStudentsInJob(int id)
+        {
+            var job = _databaseDataService.GetJob(id);
+            var students = new List<Student>();
+            foreach (var studentId in job.StudentsApplied)
+            {
+                students.Add(_databaseDataService.GetStudentByID(studentId));
+            }
+            return students;
+        }
     }
 }

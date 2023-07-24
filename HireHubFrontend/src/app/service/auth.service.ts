@@ -22,6 +22,8 @@ export class AuthService {
   getAllAvailableJobsUrl:string=''
   applyJobUrl:string=''
   getAppliedJobsUrl:string=''
+  getListOfSudentsForAJob:string=''
+  deleteJobEmployerUrl:string=''
 
   constructor(private http : HttpClient) {
 
@@ -36,6 +38,8 @@ export class AuthService {
     this.getAllAvailableJobsUrl="http://localhost:5001/student/getAllAvailableJobs"
     this.applyJobUrl= "http://localhost:5001/student/applyjob"
     this.getAppliedJobsUrl="http://localhost:5001/student/getAppliedJobs"
+    this.getListOfSudentsForAJob="http://localhost:5001/employer/getListOfStudentsForAJob"
+    this.deleteJobEmployerUrl="http://localhost:5001/employer/Deletejob"
   }
 
   loginStudent(student :Student) : Observable<any> {
@@ -81,5 +85,13 @@ export class AuthService {
 
   getAppliedJobs():Observable<any>{
     return this.http.get<Jobs>(this.getAppliedJobsUrl+"?email="+ localStorage.getItem('student_email'))
+  }
+
+  getStudentsAppliedForJob(id : string):Observable<any>{
+    return this.http.get<Student>(this.getListOfSudentsForAJob+"?id="+id);
+  }
+
+  deleteJobEmployer(id:string){
+    return this.http.delete(this.deleteJobEmployerUrl+"?id="+id);
   }
 }
