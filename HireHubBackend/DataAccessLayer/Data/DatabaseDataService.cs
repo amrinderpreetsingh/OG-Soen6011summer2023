@@ -134,6 +134,12 @@ namespace DataAccessLayer.Data
             return student;
         }
 
+        public Student GetStudentByID(int id)
+        {
+            var student = _students.FirstOrDefault(x => x.Id==id);
+            return student;
+        }
+
         public Job GetJob(int id)
         {
             return _jobs.FirstOrDefault(x => x.Id == id);

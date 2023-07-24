@@ -274,6 +274,32 @@
 				"header": []
 			},
 			"response": []
+		},
+		{
+			"name": "Employer/getListofStudentsForAJob",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5001/employer/getListofStudentsForAJob?id=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"employer",
+						"getListofStudentsForAJob"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }

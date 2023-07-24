@@ -13,5 +13,6 @@ namespace DataAccessLayer.Data
         public Student GetStudent(string studentEmail);
         public Job GetJob(int id);
         public bool DeleteJob(int id);
+        public Student GetStudentByID(int id);
     }
 }
