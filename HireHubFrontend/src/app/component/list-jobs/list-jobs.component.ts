@@ -5,6 +5,9 @@ import { MatPaginator } from '@angular/material/paginator';
 import { Jobs } from 'src/app/model/jobs';
 import { MatTableDataSource } from '@angular/material/table';
 import Swal from 'sweetalert2';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
+import { EditJobFormComponent } from '../edit-job-form/edit-job-form.component';
 
 @Component({
   selector: 'app-list-jobs',
@@ -14,8 +17,20 @@ import Swal from 'sweetalert2';
 
 export class ListJobsComponent implements OnInit {
   @ViewChild(MatPaginator) paginator !: MatPaginator;
+  editForm: FormGroup;
 
-  constructor(private authService: AuthService, private route: Router, private router: ActivatedRoute) { }
+  constructor(private authService: AuthService, private route: Router, private router: ActivatedRoute,
+    private formBuilder: FormBuilder,private dialog: MatDialog,) { 
+    this.editForm = this.formBuilder.group({
+      title: ['', Validators.required],
+      role: ['', Validators.required],
+      experience: ['', Validators.required],
+      type: ['', Validators.required],
+      skills: ['', Validators.required],
+      description: ['', Validators.required]
+    });
+  }
+
   isExpanded: boolean = false;
   ngOnInit(): void {
     this.list_all_jobs();
@@ -34,8 +49,23 @@ export class ListJobsComponent implements OnInit {
     })
   }
 
-  editJob(id: any) {
-    console.log("id :", id)
+ 
+  editJob(item: any) {
+    const dialogRef = this.dialog.open(EditJobFormComponent, {
+      width: '500px',
+      data: item
+    });
+  
+    dialogRef.afterClosed().subscribe((result: any) => {
+      if (result) {
+        // Handle the edited values here, for example, update the item in the list
+        console.log('Updated item:', result);
+        this.authService.editJob(result).subscribe(res => {
+          console.log(res);
+          this.list_all_jobs();
+        });
+      }
+    });
   }
 
   openComponentInNewTab(data: any) {

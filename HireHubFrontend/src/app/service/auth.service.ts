@@ -24,6 +24,7 @@ export class AuthService {
   getAppliedJobsUrl:string=''
   getListOfSudentsForAJob:string=''
   deleteJobEmployerUrl:string=''
+  editJobUrl:string=''
 
   constructor(private http : HttpClient) {
 
@@ -40,6 +41,7 @@ export class AuthService {
     this.getAppliedJobsUrl="http://localhost:5001/student/getAppliedJobs"
     this.getListOfSudentsForAJob="http://localhost:5001/employer/getListOfStudentsForAJob"
     this.deleteJobEmployerUrl="http://localhost:5001/employer/Deletejob"
+    this.editJobUrl="http://localhost:5001/admin/updatejob"
   }
 
   loginStudent(student :Student) : Observable<any> {
@@ -93,5 +95,10 @@ export class AuthService {
 
   deleteJobEmployer(id:string){
     return this.http.delete(this.deleteJobEmployerUrl+"?id="+id);
+  }
+
+  editJob(job:Jobs):Observable<any>{
+    console.log(job);
+    return this.http.put<Jobs>(this.editJobUrl,job)
   }
 }

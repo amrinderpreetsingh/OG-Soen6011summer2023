@@ -29,6 +29,10 @@ import { MatCardModule } from '@angular/material/card';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { AdminListStudentComponent } from './component/admin-list-student/admin-list-student.component';
 import { AdminListJobsComponent } from './component/admin-list-jobs/admin-list-jobs.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { EditJobFormComponent } from './component/edit-job-form/edit-job-form.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import { MatInputModule } from '@angular/material/input';
 
 
 
@@ -46,6 +50,7 @@ import { AdminListJobsComponent } from './component/admin-list-jobs/admin-list-j
     StudentJobsComponent,
     AdminListStudentComponent,
     AdminListJobsComponent,
+    EditJobFormComponent,
   ],
   imports: [
     BrowserModule,
@@ -64,7 +69,10 @@ import { AdminListJobsComponent } from './component/admin-list-jobs/admin-list-j
     MatPaginatorModule,
     MatSortModule,
     MatCardModule,
-    MatExpansionModule
+    MatExpansionModule,
+    ReactiveFormsModule,
+    MatDialogModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]
