@@ -6,17 +6,17 @@
         <mat-icon mat-list-icon class="chevron-button" [ngClass]="{ rotated: isExpanded }">chevron_right
         </mat-icon>
       </mat-list-item>
-      <mat-list-item [routerLink]="'/post-job'">
+      <mat-list-item [routerLink]="'/employer/post-job'">
         <mat-icon mat-list-icon>important_devices</mat-icon>
         <span *ngIf="isExpanded" class="menu-item">Post Jobs</span>
       </mat-list-item>
 
-      <mat-list-item [routerLink]="'/list-job'">
+      <mat-list-item [routerLink]="'/employer/list-job'">
         <mat-icon mat-list-icon>assignment icon</mat-icon>
         <span *ngIf="isExpanded" class="menu-item">List Jobs</span>
       </mat-list-item>
 
-      <mat-list-item [routerLink]="'/list-student'">
+      <mat-list-item [routerLink]="'/employer/list-student'">
         <mat-icon mat-list-icon>supervisor_account</mat-icon>
         <span *ngIf="isExpanded" class="menu-item">List Students</span>
       </mat-list-item>

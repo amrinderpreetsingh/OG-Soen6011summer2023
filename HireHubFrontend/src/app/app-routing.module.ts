@@ -16,10 +16,10 @@ const routes: Routes = [
   {path:'signup', component: SignupComponent},
   {path:'Student', component:StudentDashboardComponent},
   {path:'Employer',component:EmployerDashboardComponent},
-  {path:'list-job', component: ListJobsComponent},
-  {path:'post-job',component:PostJobComponent},
-  {path:'list-student', component:ListStudentComponent},
-  {path:'student-jobs', component:StudentJobsComponent},
+  {path:'employer/list-job', component: ListJobsComponent},
+  {path:'employer/post-job',component:PostJobComponent},
+  {path:'employer/list-student', component:ListStudentComponent},
+  {path:'student/student-jobs', component:StudentJobsComponent},
   {path:"admin-dashboard",component:AdminDashboardComponent}
 ];
 

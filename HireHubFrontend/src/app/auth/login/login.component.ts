@@ -34,8 +34,10 @@ export class LoginComponent implements OnInit {
     }
     else {
       const email = this.extractDomainFromEmail(this.email);
-
-      if (email == "gmail" ||email == "yahoo"||email == "hirehub") {
+      
+      console.log(email);
+      
+      if (email == "Gmail"|| email == "Hirehub") {
         this.role = "Student"
       } else {
         this.role = "Employer"
