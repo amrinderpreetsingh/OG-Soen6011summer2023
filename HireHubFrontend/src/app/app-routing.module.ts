@@ -19,7 +19,8 @@ const routes: Routes = [
   {path:'list-job', component: ListJobsComponent},
   {path:'post-job',component:PostJobComponent},
   {path:'list-student', component:ListStudentComponent},
-  {path:'student-jobs', component:StudentJobsComponent}
+  {path:'student-jobs', component:StudentJobsComponent},
+  {path:"admin-dashboard",component:AdminDashboardComponent}
 ];
 
 @NgModule({
