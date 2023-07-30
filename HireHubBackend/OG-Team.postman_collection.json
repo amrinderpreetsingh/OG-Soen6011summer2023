@@ -400,6 +400,95 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "Admin/EditEmployer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"Id\":1,\n    \"companyName\": \"KPMG\",\n    \"companyEmail\": \"jobs@kpmg.com\",\n    \"companyPassword\": \"1234\",\n    \"address\": \"India\",\n    \"about\":\"ghaint\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5001/admin/editEmployer",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"admin",
+						"editEmployer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Admin/DeleteEmployer",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5001/admin/DeleteEmployer?id=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"admin",
+						"DeleteEmployer"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Admin/EditStudent",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Admin/DeleteStudent",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5001/admin/DeleteStudent?id=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"admin",
+						"DeleteStudent"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }

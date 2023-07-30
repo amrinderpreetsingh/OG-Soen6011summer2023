@@ -95,5 +95,25 @@ namespace BusinessLogicLayer.Services
         {
             return _studentService.GetAllStudents();
         }
+
+        public bool EditEmployerAdmin(Employer updatedEmployer)
+        {
+            return _employerService.UpdateEmployer(updatedEmployer);
+        }
+
+        public bool DeleteEmployerAdmin(int id)
+        {
+            return _employerService.DeleteEmployer(id);
+        }
+
+        public bool EditStudentAdmin(Student student)
+        {
+            return _studentService.EditStudent(student);
+        }
+
+        public bool DeleteStudentAdmin(int id)
+        {
+            return _studentService.DeleteStudent(id);
+        }
     }
 }

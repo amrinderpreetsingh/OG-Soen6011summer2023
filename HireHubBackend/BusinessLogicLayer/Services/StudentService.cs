@@ -69,5 +69,26 @@ namespace BusinessLogicLayer.Services
         {
             return _databaseDataService.GetAllStudents();
         }
+
+        public bool EditStudent(Student updatedStudent)
+        {
+            var student = _databaseDataService.GetStudentByID(updatedStudent.Id);
+            if (student == null)
+            {
+                return false;
+            }
+            student.Name = updatedStudent.Name;
+            student.Email = updatedStudent.Email;
+            student.Password = updatedStudent.Password;
+            student.Qualification = updatedStudent.Qualification;
+            student.School = updatedStudent.School;
+            student.Experience = updatedStudent.Experience;
+            return true;
+        }
+
+        public bool DeleteStudent(int id)
+        {
+            return _databaseDataService.DeleteStudent(id);
+        }
     }
 }

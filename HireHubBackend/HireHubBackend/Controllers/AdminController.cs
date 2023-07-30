@@ -62,5 +62,33 @@ namespace PresentationLayer.Controllers
         {
             return Ok(_serviceFacade.GetAllStudentsAdmin());
         }
+
+        [HttpPost]
+        [Route("EditEmployer")]
+        public ActionResult EditEmployer(Employer employer)
+        {
+            return Ok(_serviceFacade.EditEmployerAdmin(employer));
+        }
+
+        [HttpDelete]
+        [Route("DeleteEmployer")]
+        public ActionResult DeleteEmployer(int id)
+        {
+            return Ok(_serviceFacade.DeleteEmployerAdmin(id));
+        }
+
+        [HttpPost]
+        [Route("EditStudent")]
+        public ActionResult EditStudent(Student student)
+        {
+            return Ok(_serviceFacade.EditStudentAdmin(student));
+        }
+
+        [HttpDelete]
+        [Route("DeleteStudent")]
+        public ActionResult DeleteStudent(int id)
+        {
+            return Ok(_serviceFacade.DeleteStudentAdmin(id));
+        }
     }
 }
