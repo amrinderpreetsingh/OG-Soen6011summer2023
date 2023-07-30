@@ -132,4 +132,17 @@ export class AuthService {
     console.log(student)
     return this.http.post<Student>(this.editStudentAdminUrl,student)
   }
+
+  getAllEmployerAdmin():Observable<any>{
+    return this.http.get<Jobs>(this.getAllEmployersAdminUrl);
+  }
+
+  deleteEmployerAdmin(id:string){
+    return this.http.delete(this.deleteEmployerAdminUrl+"?id="+id);
+  }
+  
+  editEmployerAdmin(employer:Employer):Observable<any>{
+    console.log(employer)
+    return this.http.post<Student>(this.editEmployerAdminUrl,employer)
+  }
 }

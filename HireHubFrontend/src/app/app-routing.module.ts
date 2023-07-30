@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './auth/login/login.component';
 import { SignupComponent } from './auth/signup/signup.component';
 import { AdminDashboardComponent } from './component/admin-dashboard/admin-dashboard.component';
+import { AdminListEmployerComponent } from './component/admin-list-employer/admin-list-employer.component';
 import { AdminListJobsComponent } from './component/admin-list-jobs/admin-list-jobs.component';
 import { AdminListStudentComponent } from './component/admin-list-student/admin-list-student.component';
 import { EmployerDashboardComponent } from './component/employer-dashboard/employer-dashboard.component';
@@ -24,7 +25,8 @@ const routes: Routes = [
   {path:'student/student-jobs', component:StudentJobsComponent},
   {path:"admin-dashboard",component:AdminDashboardComponent},
   {path:"admin/list-job", component: AdminListJobsComponent},
-  {path:"admin/list-student",component:AdminListStudentComponent}
+  {path:"admin/list-student",component:AdminListStudentComponent},
+  {path:"admin/list-employer",component:AdminListEmployerComponent}
 ];
 
 @NgModule({
