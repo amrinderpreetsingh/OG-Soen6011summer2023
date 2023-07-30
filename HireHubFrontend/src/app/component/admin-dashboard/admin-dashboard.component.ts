@@ -9,7 +9,8 @@ import { Router } from '@angular/router';
 export class AdminDashboardComponent implements OnInit {
 
   constructor(private route : Router) { }
-
+  isExpanded: boolean = false;
+  
   ngOnInit(): void {
   }
 

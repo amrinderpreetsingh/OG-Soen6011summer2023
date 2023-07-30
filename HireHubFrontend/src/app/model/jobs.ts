@@ -7,4 +7,5 @@ export class Jobs {
     experience : string='';
     description : string= '';
     postedBy:any;
+    studentsApplied:any[] | undefined;
 }

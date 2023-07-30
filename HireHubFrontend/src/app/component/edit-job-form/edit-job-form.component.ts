@@ -19,7 +19,10 @@ export class EditJobFormComponent implements OnInit {
         experience: [data.experience, Validators.required],
         type: [data.type, Validators.required],
         skills: [data.skills, Validators.required],
-        description: [data.description, Validators.required]});
+        description: [data.description, Validators.required],
+        studentsApplied:[data.studentsApplied],
+        postedBy:[data.postedBy],
+        id:[data.id, Validators.required]});
     }
 
   ngOnInit(): void {

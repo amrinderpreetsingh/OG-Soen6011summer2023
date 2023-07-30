@@ -1,3 +1,37 @@
-<h1>Admin Dashboard</h1>
-
-<button class="btn btn-outline-success" (click)="logout()">Logout</button>
+<mat-sidenav-container autosize>
+    <mat-sidenav #sidenav mode="side" opened="isExpanded">
+      <mat-nav-list>
+  
+        <mat-list-item (click)="isExpanded = !isExpanded">
+          <mat-icon mat-list-icon class="chevron-button" [ngClass]="{ rotated: isExpanded }">chevron_right
+          </mat-icon>
+        </mat-list-item>  
+        <mat-list-item [routerLink]="'/admin/list-employer'">
+          <mat-icon mat-list-icon>assignment icon</mat-icon>
+          <span *ngIf="isExpanded" class="menu-item">List Employers</span>
+        </mat-list-item>
+  
+        <mat-list-item [routerLink]="'/admin/list-student'">
+          <mat-icon mat-list-icon>supervisor_account</mat-icon>
+          <span *ngIf="isExpanded" class="menu-item">List Students</span>
+        </mat-list-item>
+  
+      </mat-nav-list>
+    </mat-sidenav>
+  
+    <!-- Content - rendered Content for the current router path into the <router-outlet>, e.g. /dashboard or /info-->
+    <mat-sidenav-content>
+      <mat-toolbar color="primary">
+        <h4>Admin Dashboard</h4>
+        <span class="example-spacer "></span>
+        <button mat-raised-button (click)="logout()" color="warn">Logout</button>
+      </mat-toolbar>
+          <div id="post-job">
+        <!-- Post Jobs section content -->
+      </div>
+      <div id="list-job">
+        <!-- List Jobs section content -->
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+  

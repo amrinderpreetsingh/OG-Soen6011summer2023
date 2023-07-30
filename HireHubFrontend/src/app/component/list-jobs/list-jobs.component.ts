@@ -51,6 +51,8 @@ export class ListJobsComponent implements OnInit {
 
  
   editJob(item: any) {
+    console.log(item.id);
+    
     const dialogRef = this.dialog.open(EditJobFormComponent, {
       width: '500px',
       data: item
