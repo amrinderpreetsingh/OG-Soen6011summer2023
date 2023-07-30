@@ -1,0 +1,38 @@
+<h1 mat-dialog-title>Edit Job</h1>
+<div mat-dialog-content>
+  <form [formGroup]="editForm">
+    <mat-form-field appearance="fill">
+      <mat-label>Title</mat-label>
+      <input matInput formControlName="title" placeholder="Title" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Role</mat-label>
+      <input matInput formControlName="role" placeholder="Role" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Experience</mat-label>
+      <input matInput formControlName="experience" placeholder="Experience" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Type</mat-label>
+      <input matInput formControlName="type" placeholder="Type" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Skills</mat-label>
+      <input matInput formControlName="skills" placeholder="Skills" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Description</mat-label>
+      <textarea matInput formControlName="description" placeholder="Description" required></textarea>
+    </mat-form-field>
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onCancel()">Cancel</button>
+  <button mat-raised-button color="primary" [disabled]="!editForm.valid" (click)="onSave()">Save</button>
+</div>

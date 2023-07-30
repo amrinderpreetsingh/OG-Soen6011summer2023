@@ -28,8 +28,6 @@ export class StudentJobsComponent implements OnInit {
         return { ...job, companyName: companyName };
       })
       console.log(this.job_data);
-
-
     })
   }
 
