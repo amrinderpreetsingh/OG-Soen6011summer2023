@@ -119,4 +119,17 @@ export class AuthService {
   getAllJobsAdmin():Observable<any>{
     return this.http.get<Jobs>(this.getAllJobsAdminUrl);
   }
+
+  getAllStudentsAdmin():Observable<any>{
+    return this.http.get<Jobs>(this.getAllStudentsAdminUrl);
+  }
+
+  deleteStudentAdmin(id:string){
+    return this.http.delete(this.deleteStudentAdminUrl+"?id="+id);
+  }
+  
+  editStudentAdmin(student:Student):Observable<any>{
+    console.log(student)
+    return this.http.post<Student>(this.editStudentAdminUrl,student)
+  }
 }
