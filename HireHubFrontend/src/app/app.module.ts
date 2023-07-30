@@ -34,6 +34,8 @@ import { EditJobFormComponent } from './component/edit-job-form/edit-job-form.co
 import {MatDialogModule} from '@angular/material/dialog';
 import { MatInputModule } from '@angular/material/input';
 import { EditStudentFormComponent } from './component/edit-student-form/edit-student-form.component';
+import { EditEmployerFormComponent } from './component/edit-employer-form/edit-employer-form.component';
+import { AdminListEmployerComponent } from './component/admin-list-employer/admin-list-employer.component';
 
 
 
@@ -53,7 +55,9 @@ import { EditStudentFormComponent } from './component/edit-student-form/edit-stu
     AdminListStudentComponent,
     AdminListJobsComponent,
     EditJobFormComponent,
-    EditStudentFormComponent
+    EditStudentFormComponent,
+    EditEmployerFormComponent,
+    AdminListEmployerComponent
   ],
   imports: [
     BrowserModule,

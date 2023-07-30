@@ -7,7 +7,6 @@ import { Router } from '@angular/router';
 import { Jobs } from 'src/app/model/jobs';
 import { AuthService } from 'src/app/service/auth.service';
 import Swal from 'sweetalert2';
-import { EditJobFormComponent } from '../edit-job-form/edit-job-form.component';
 import { EditStudentFormComponent } from '../edit-student-form/edit-student-form.component';
 
 @Component({
@@ -61,7 +60,7 @@ export class AdminListStudentComponent implements OnInit {
     dialogRef.afterClosed().subscribe((result: any) => {
       if (result) {
         // Handle the edited values here, for example, update the item in the list
-        console.log('Updated item:', result);
+
         this.authService.editStudentAdmin(result).subscribe(res => {
           console.log(res);
           this.list_all_jobs();

@@ -23,7 +23,7 @@ const routes: Routes = [
   {path:'employer/list-student', component:ListStudentComponent},
   {path:'student/student-jobs', component:StudentJobsComponent},
   {path:"admin-dashboard",component:AdminDashboardComponent},
-  {path:"admin/list-employer", component: AdminListJobsComponent},
+  {path:"admin/list-job", component: AdminListJobsComponent},
   {path:"admin/list-student",component:AdminListStudentComponent}
 ];
 
