@@ -46,5 +46,25 @@ namespace BusinessLogicLayer.Services
         {
             return _databaseDataService.GetAllEmployers();
         }
+
+        public bool UpdateEmployer(Employer updatedEmployer)
+        {
+            var employer = _databaseDataService.GetEmployer(updatedEmployer.Id);
+            if (employer == null)
+            {
+                return false;
+            }
+            employer.CompanyName = updatedEmployer.CompanyName;
+            employer.CompanyEmail = updatedEmployer.CompanyEmail;
+            employer.CompanyPassword = updatedEmployer.CompanyPassword;
+            employer.Address = updatedEmployer.Address;
+            employer.About = updatedEmployer.About;
+            return true;
+        }
+
+        public bool DeleteEmployer(int id)
+        {
+            return _databaseDataService.DeleteEmployer(id);
+        }
     }
 }

@@ -28,7 +28,10 @@ export class AuthService {
   getAllJobsAdminUrl:string=''
   getAllEmployersAdminUrl:string=''
   getAllStudentsAdminUrl:string=''
-
+  editEmployerAdminUrl:string=''
+  editStudentAdminUrl:string=''
+  deleteEmployerAdminUrl:string=''
+  deleteStudentAdminUrl:string=''
   
   constructor(private http : HttpClient) {
 
@@ -49,6 +52,10 @@ export class AuthService {
     this.getAllJobsAdminUrl="http://localhost:5001/admin/alljobs"
     this.getAllEmployersAdminUrl="http://localhost:5001/admin/allEmployers"
     this.getAllStudentsAdminUrl="http://localhost:5001/admin/allStudents"
+    this.editEmployerAdminUrl="http://localhost:5001/admin/editEmployer"
+    this.editStudentAdminUrl="http://localhost:5001/admin/editStudent"
+    this.deleteEmployerAdminUrl="http://localhost:5001/admin/DeleteEmployer"
+    this.deleteStudentAdminUrl="http://localhost:5001/admin/DeleteStudent"
   }
 
   loginStudent(student :Student) : Observable<any> {

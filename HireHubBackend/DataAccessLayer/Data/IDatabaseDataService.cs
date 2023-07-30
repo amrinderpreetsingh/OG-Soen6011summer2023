@@ -14,5 +14,8 @@ namespace DataAccessLayer.Data
         public Job GetJob(int id);
         public bool DeleteJob(int id);
         public Student GetStudentByID(int id);
+        public Employer GetEmployer(int id);
+        public bool DeleteEmployer(int id);
+        public bool DeleteStudent(int id);
     }
 }

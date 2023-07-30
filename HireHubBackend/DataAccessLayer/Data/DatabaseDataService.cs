@@ -150,5 +150,22 @@ namespace DataAccessLayer.Data
             _jobs.RemoveAll(x => x.Id == id);
             return true;
         }
+
+        public Employer GetEmployer(int id)
+        {
+            return _employers.FirstOrDefault(x => x.Id == id);
+        }
+
+        public bool DeleteEmployer(int id)
+        {
+            _employers.RemoveAll(x => x.Id == id);
+            return true;
+        }
+
+        public bool DeleteStudent(int id)
+        {
+            _students.RemoveAll(x => x.Id == id);
+            return true;
+        }
     }
 }
