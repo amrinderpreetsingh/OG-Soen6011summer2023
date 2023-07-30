@@ -31,7 +31,7 @@ table {
   }
   
   .action-cell {
-    width: 25%; /* Allocate 50% of the available space for the "Action" column */
+    width: 20%; /* Allocate 50% of the available space for the "Action" column */
   }
   
   .truncate-text {
