@@ -41,5 +41,26 @@ namespace PresentationLayer.Controllers
         {
             return Ok(_serviceFacade.DeleteJob(id));
         }
+
+        [HttpGet]
+        [Route("AllJobs")]
+        public ActionResult GetAllJobs()
+        {
+            return Ok(_serviceFacade.GetAllJobsAdmin());
+        }
+
+        [HttpGet]
+        [Route("AllEmployers")]
+        public ActionResult GetAllEmployers()
+        {
+            return Ok(_serviceFacade.GetAllEmployersAdmin());
+        }
+
+        [HttpGet]
+        [Route("AllStudents")]
+        public ActionResult GetAllStudents()
+        {
+            return Ok(_serviceFacade.GetAllStudentsAdmin());
+        }
     }
 }

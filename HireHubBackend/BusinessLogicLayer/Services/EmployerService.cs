@@ -41,5 +41,10 @@ namespace BusinessLogicLayer.Services
         {
             return _databaseDataService.GetAllStudents();
         }
+
+        public List<Employer> GetAllEmployers()
+        {
+            return _databaseDataService.GetAllEmployers();
+        }
     }
 }

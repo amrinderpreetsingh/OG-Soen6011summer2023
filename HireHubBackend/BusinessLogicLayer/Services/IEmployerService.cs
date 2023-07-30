@@ -9,5 +9,6 @@ namespace BusinessLogicLayer.Services
         public bool Login(string email, string password);
         public bool Signup(Employer employer);
         public List<Student> GetStudents();
+        public List<Employer> GetAllEmployers();
     }
 }

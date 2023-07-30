@@ -64,5 +64,10 @@ namespace BusinessLogicLayer.Services
             student.JobsApplied.Add(JobId);
             return true;
         }
+
+        public List<Student> GetAllStudents()
+        {
+            return _databaseDataService.GetAllStudents();
+        }
     }
 }
