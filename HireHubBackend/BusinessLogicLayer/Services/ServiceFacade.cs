@@ -115,5 +115,15 @@ namespace BusinessLogicLayer.Services
         {
             return _studentService.DeleteStudent(id);
         }
+
+        public bool AcceptStudent(int studentId,int jobId)
+        {
+            return _employerService.AcceptStudent(studentId, jobId);
+        }
+
+        public bool DeclinetStudent(int studentId, int jobId)
+        {
+            return _employerService.DeclineStudent(studentId, jobId);
+        }
     }
 }

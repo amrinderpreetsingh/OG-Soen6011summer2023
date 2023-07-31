@@ -61,7 +61,11 @@ namespace BusinessLogicLayer.Services
                 return false;
             }
             job.StudentsApplied.Add(student.Id);
-            student.JobsApplied.Add(JobId);
+            student.JobsApplied.Add(new JobStatus
+            {
+                JobId=job.Id,
+                Status=Constant.APPLIED_STATUS
+            });
             return true;
         }
 
