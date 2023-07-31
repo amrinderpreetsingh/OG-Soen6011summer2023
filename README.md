@@ -53,6 +53,7 @@ Within each sprint, the team diligently executes the assigned tasks, undergoing 
 | **Backend**  |                **.NetCore Framework**  |
 | **Database** |         **In Memory Database**         |
 |   **IDE**    | **Visual Studio 2019, Visual Studio Code** |
+|   **Projcet Management SW**    | **Jira** |
 
 
 ## Team Members and Roles
