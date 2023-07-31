@@ -33,6 +33,10 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { EditJobFormComponent } from './component/edit-job-form/edit-job-form.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import { MatInputModule } from '@angular/material/input';
+import { EditStudentFormComponent } from './component/edit-student-form/edit-student-form.component';
+import { EditEmployerFormComponent } from './component/edit-employer-form/edit-employer-form.component';
+import { AdminListEmployerComponent } from './component/admin-list-employer/admin-list-employer.component';
+
 
 
 
@@ -51,6 +55,9 @@ import { MatInputModule } from '@angular/material/input';
     AdminListStudentComponent,
     AdminListJobsComponent,
     EditJobFormComponent,
+    EditStudentFormComponent,
+    EditEmployerFormComponent,
+    AdminListEmployerComponent
   ],
   imports: [
     BrowserModule,

@@ -80,5 +80,40 @@ namespace BusinessLogicLayer.Services
         {
             return _jobService.GetListOfAppliedStudentsInJob(id);
         }
+
+        public List<Job> GetAllJobsAdmin()
+        {
+            return _jobService.GetAllJobs();
+        }
+
+        public List<Employer> GetAllEmployersAdmin()
+        {
+            return _employerService.GetAllEmployers();
+        }
+
+        public List<Student> GetAllStudentsAdmin()
+        {
+            return _studentService.GetAllStudents();
+        }
+
+        public bool EditEmployerAdmin(Employer updatedEmployer)
+        {
+            return _employerService.UpdateEmployer(updatedEmployer);
+        }
+
+        public bool DeleteEmployerAdmin(int id)
+        {
+            return _employerService.DeleteEmployer(id);
+        }
+
+        public bool EditStudentAdmin(Student student)
+        {
+            return _studentService.EditStudent(student);
+        }
+
+        public bool DeleteStudentAdmin(int id)
+        {
+            return _studentService.DeleteStudent(id);
+        }
     }
 }

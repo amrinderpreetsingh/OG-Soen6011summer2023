@@ -33,12 +33,12 @@ export class AdminListJobsComponent implements OnInit {
   ngOnInit(): void {
     this.list_all_jobs();
   }
-  displayedColumns: string[] = ['id', 'userId', 'completed', 'title', 'skills', 'description', 'action'];
+  displayedColumns: string[] = ['id', 'userId', 'completed', 'title', 'skills', 'postedBy', 'description', 'action'];
   dataSource: any;
   job_data: any = [];
 
   list_all_jobs() {
-    this.authService.getJobsPostedByAnEmployer().subscribe(res => {
+    this.authService.getAllJobsAdmin().subscribe(res => {
       console.log(res)
       this.job_data = res;
       this.dataSource = new MatTableDataSource<Jobs>(this.job_data)

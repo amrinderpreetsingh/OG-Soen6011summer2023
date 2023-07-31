@@ -24,8 +24,15 @@ export class AuthService {
   getAppliedJobsUrl:string=''
   getListOfSudentsForAJob:string=''
   deleteJobEmployerUrl:string=''
-  editJobUrl:string=''
-
+  editJobUrlAdmin:string=''
+  getAllJobsAdminUrl:string=''
+  getAllEmployersAdminUrl:string=''
+  getAllStudentsAdminUrl:string=''
+  editEmployerAdminUrl:string=''
+  editStudentAdminUrl:string=''
+  deleteEmployerAdminUrl:string=''
+  deleteStudentAdminUrl:string=''
+  
   constructor(private http : HttpClient) {
 
     this.employerLoginUrl = "http://localhost:5001/employer/login";
@@ -41,7 +48,14 @@ export class AuthService {
     this.getAppliedJobsUrl="http://localhost:5001/student/getAppliedJobs"
     this.getListOfSudentsForAJob="http://localhost:5001/employer/getListOfStudentsForAJob"
     this.deleteJobEmployerUrl="http://localhost:5001/employer/Deletejob"
-    this.editJobUrl="http://localhost:5001/admin/updatejob"
+    this.editJobUrlAdmin="http://localhost:5001/admin/updatejob"
+    this.getAllJobsAdminUrl="http://localhost:5001/admin/alljobs"
+    this.getAllEmployersAdminUrl="http://localhost:5001/admin/allEmployers"
+    this.getAllStudentsAdminUrl="http://localhost:5001/admin/allStudents"
+    this.editEmployerAdminUrl="http://localhost:5001/admin/editEmployer"
+    this.editStudentAdminUrl="http://localhost:5001/admin/editStudent"
+    this.deleteEmployerAdminUrl="http://localhost:5001/admin/DeleteEmployer"
+    this.deleteStudentAdminUrl="http://localhost:5001/admin/DeleteStudent"
   }
 
   loginStudent(student :Student) : Observable<any> {
@@ -99,6 +113,36 @@ export class AuthService {
 
   editJob(job:Jobs):Observable<any>{
     console.log(job);
-    return this.http.put<Jobs>(this.editJobUrl,job)
+    return this.http.put<Jobs>(this.editJobUrlAdmin,job)
+  }
+
+  getAllJobsAdmin():Observable<any>{
+    return this.http.get<Jobs>(this.getAllJobsAdminUrl);
+  }
+
+  getAllStudentsAdmin():Observable<any>{
+    return this.http.get<Jobs>(this.getAllStudentsAdminUrl);
+  }
+
+  deleteStudentAdmin(id:string){
+    return this.http.delete(this.deleteStudentAdminUrl+"?id="+id);
+  }
+  
+  editStudentAdmin(student:Student):Observable<any>{
+    console.log(student)
+    return this.http.post<Student>(this.editStudentAdminUrl,student)
+  }
+
+  getAllEmployerAdmin():Observable<any>{
+    return this.http.get<Jobs>(this.getAllEmployersAdminUrl);
+  }
+
+  deleteEmployerAdmin(id:string){
+    return this.http.delete(this.deleteEmployerAdminUrl+"?id="+id);
+  }
+  
+  editEmployerAdmin(employer:Employer):Observable<any>{
+    console.log(employer)
+    return this.http.post<Student>(this.editEmployerAdminUrl,employer)
   }
 }
