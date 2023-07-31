@@ -40,13 +40,10 @@ They can review applications, manage interviews, and send invitations.
 Admin oversees user profiles and job postings for accuracy.
 Access to analytics and reporting tools for monitoring platform usage and generating insights.
 
-## Team Members and Roles
-| Student ID |          Name           | Role
-|:----------:|:-----------------------:|:---------:|
-|  40226671  |   Amrinderpreet Singh   |Frontend and Backend Developer|
-|  40230095  |    Gaganpreet Singh     |Team Lead and Backend Developer|
-|  40227124  | Komalmeet Singh Bhoagal | Frontend and Designer |
-|40152356|Sara Khandehrooy|Software Engineer|
+## Project Approach
+
+The team employs a test-driven Scrum-based methodology, conducting regular sprints to drive the project forward. A backlog of user stories has been carefully analyzed, divided into tasks, and assigned estimated timelines. Collaborating with a product owner, the team prioritizes and incorporates these stories into each sprint.
+Within each sprint, the team diligently executes the assigned tasks, undergoing thorough code reviews before merging their work. Regular meetings are conducted to facilitate progress sharing and obstacle resolution. As each sprint concludes, a meticulous review of the stories is undertaken to ensure completion or identify potential additional tasks. Additionally, a retrospective is conducted to gather feedback and enhance the development process.
 
 
 ## Technologies Used
@@ -56,6 +53,15 @@ Access to analytics and reporting tools for monitoring platform usage and genera
 | **Backend**  |                **.NetCore Framework**  |
 | **Database** |         **In Memory Database**         |
 |   **IDE**    | **Visual Studio 2019, Visual Studio Code** |
+
+
+## Team Members and Roles
+| Student ID |          Name           | Role
+|:----------:|:-----------------------:|:---------:|
+|  40226671  |   Amrinderpreet Singh   |Frontend and Backend Developer|
+|  40230095  |    Gaganpreet Singh     |Team Lead and Backend Developer|
+|  40227124  | Komalmeet Singh Bhoagal | Frontend and Designer |
+|40152356|Sara Khandehrooy|Software Engineer|
 
 
 ## GitHub Link:
