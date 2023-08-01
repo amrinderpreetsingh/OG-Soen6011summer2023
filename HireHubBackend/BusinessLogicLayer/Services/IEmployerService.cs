@@ -12,5 +12,7 @@ namespace BusinessLogicLayer.Services
         public List<Employer> GetAllEmployers();
         public bool UpdateEmployer(Employer updatedEmployer);
         public bool DeleteEmployer(int id);
+        public bool AcceptStudent(int studentId, int jobId);
+        public bool DeclineStudent(int studentId, int jobId);
     }
 }

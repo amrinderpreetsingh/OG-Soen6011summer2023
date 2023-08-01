@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { Jobs } from 'src/app/model/jobs';
+import { Student } from 'src/app/model/student.model';
 import { AuthService } from 'src/app/service/auth.service';
 import Swal from 'sweetalert2'
 
@@ -14,19 +15,34 @@ export class StudentJobsComponent implements OnInit {
   constructor(private authService: AuthService, private route: Router) { }
   isExpanded: boolean = false;
   ngOnInit(): void {
+    this.getLoggedInStudent()
     this.listAllJobs()
   }
   
   job_data: any = [];
-
+  student:any;
 
 
   listAllJobs() {
     this.authService.getAppliedJobs().subscribe(res => {
-      this.job_data = res.map((job: Jobs) => {
-        const companyName = this.extractDomainFromEmail(job.postedBy);
-        return { ...job, companyName: companyName };
-      })
+       res.forEach((element: any) => {
+        console.log(element);
+        
+        element["companyName"]=this.extractDomainFromEmail(element.postedBy);
+        this.student.jobsApplied.forEach((elem: { jobId: string | undefined; status: any; })=>{
+          if(element.id==elem.jobId){
+            console.log("kida");
+            element["status"]=elem.status
+          }
+        })
+      });
+      this.job_data=res;
+      // this.job_data = res.map((job: any) => {
+      //   const companyName = this.extractDomainFromEmail(job.postedBy);
+      //   job['companyName']=companyName;
+      //   return { ...job, companyName: companyName };
+        
+      // })
       console.log(this.job_data);
     })
   }
@@ -54,5 +70,12 @@ export class StudentJobsComponent implements OnInit {
   logout() {
     localStorage.clear();
     this.route.navigate(['/']);
+  }
+
+  getLoggedInStudent(){
+    this.authService.getLoginStudent().subscribe(res=>{
+      console.log(res);
+      this.student=res;
+    })
   }
 }

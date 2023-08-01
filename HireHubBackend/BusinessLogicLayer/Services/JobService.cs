@@ -51,7 +51,7 @@ namespace BusinessLogicLayer.Services
             foreach (var studentId in job.StudentsApplied)
             {
                 var student = _databaseDataService.GetStudentByID(studentId);
-                student.JobsApplied.Remove(studentId);
+                student.JobsApplied.RemoveAll(x=>x.JobId==job.Id);
             }
             return _databaseDataService.DeleteJob(id);
         }

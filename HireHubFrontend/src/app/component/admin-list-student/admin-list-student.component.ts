@@ -79,7 +79,7 @@ export class AdminListStudentComponent implements OnInit {
   deleteJob(id: any) {
     Swal.fire({
       title: 'Are you sure?',
-      text: 'You are about to delete this Job Posting',
+      text: 'You are about to delete this Student',
       icon: 'warning',
       showCancelButton: true,
       confirmButtonColor: '#3085d6',
@@ -93,7 +93,7 @@ export class AdminListStudentComponent implements OnInit {
         });
         Swal.fire({
           title: 'Deleted!',
-          text: 'Your Job posting has been deleted.',
+          text: 'Student has been deleted.',
           icon: 'success',
         });
       }

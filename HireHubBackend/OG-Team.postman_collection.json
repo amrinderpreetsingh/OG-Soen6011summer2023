@@ -264,7 +264,7 @@
 			"response": []
 		},
 		{
-			"name": "Admin/DeletJob",
+			"name": "Admin/DeleteJob",
 			"request": {
 				"method": "DELETE",
 				"header": [],
@@ -487,6 +487,44 @@
 						}
 					]
 				}
+			},
+			"response": []
+		},
+		{
+			"name": "Employer/AcceptStudent",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5001/employer/AcceptApplication?studentId=1&jobId=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"employer",
+						"AcceptApplication"
+					],
+					"query": [
+						{
+							"key": "studentId",
+							"value": "1"
+						},
+						{
+							"key": "jobId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Employer/DeclineApplication",
+			"request": {
+				"method": "GET",
+				"header": []
 			},
 			"response": []
 		}
