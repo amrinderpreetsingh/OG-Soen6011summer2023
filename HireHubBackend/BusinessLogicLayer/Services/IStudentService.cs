@@ -13,5 +13,6 @@ namespace BusinessLogicLayer.Services
         public List<Student> GetAllStudents();
         public bool EditStudent(Student updatedStudent);
         public bool DeleteStudent(int id);
+        public Student GetStudent(string email);
     }
 }

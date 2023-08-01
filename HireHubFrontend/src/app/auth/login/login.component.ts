@@ -75,7 +75,7 @@ export class LoginComponent implements OnInit {
         } else {
           console.log("Login successful");
           localStorage.setItem("employer_email", this.email);
-          this.route.navigate(['/Employer']);
+          this.route.navigate(['/employer/list-job']);
         }
       }, err => {
         alert("Login failed");

@@ -1,3 +1,5 @@
+import { JobStatus } from "./JobStatus";
+
 export class Student {
     id : number | undefined ;
     password : string = '';
@@ -6,4 +8,5 @@ export class Student {
     qualification: string= ''
     experience : string= ''
     name: string = ''
+    jobsApplied:any[] | undefined;
 }

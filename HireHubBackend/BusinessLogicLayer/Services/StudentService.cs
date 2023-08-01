@@ -94,5 +94,10 @@ namespace BusinessLogicLayer.Services
         {
             return _databaseDataService.DeleteStudent(id);
         }
+
+        public Student GetStudent(string email)
+        {
+            return _databaseDataService.GetStudent(email);
+        }
     }
 }

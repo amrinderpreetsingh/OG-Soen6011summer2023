@@ -125,5 +125,10 @@ namespace BusinessLogicLayer.Services
         {
             return _employerService.DeclineStudent(studentId, jobId);
         }
+
+        public Student GetStudent(string email)
+        {
+            return _studentService.GetStudent(email);
+        }
     }
 }

@@ -81,7 +81,7 @@ export class AdminListEmployerComponent implements OnInit {
   deleteJob(id: any) {
     Swal.fire({
       title: 'Are you sure?',
-      text: 'You are about to delete this Job Posting',
+      text: 'You are about to delete this Employer?',
       icon: 'warning',
       showCancelButton: true,
       confirmButtonColor: '#3085d6',
@@ -95,7 +95,7 @@ export class AdminListEmployerComponent implements OnInit {
         });
         Swal.fire({
           title: 'Deleted!',
-          text: 'Your Job posting has been deleted.',
+          text: 'YEmployer has been deleted.',
           icon: 'success',
         });
       }
