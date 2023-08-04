@@ -66,7 +66,7 @@ export class AdminListJobsComponent implements OnInit {
   }
 
   openComponentInNewTab(data: any) {
-    const componentRoute = '/employer/list-student';
+    const componentRoute = 'admin/list-applicants';
     const queryParams = { job_id: data.id };
     const url = this.route.createUrlTree([componentRoute], { queryParams: queryParams }).toString();
     window.open(url, '_blank');

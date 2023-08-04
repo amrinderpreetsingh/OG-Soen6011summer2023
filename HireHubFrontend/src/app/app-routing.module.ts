@@ -12,6 +12,7 @@ import { ListStudentComponent } from './component/list-student/list-student.comp
 import { PostJobComponent } from './component/post-job/post-job.component';
 import { StudentDashboardComponent } from './component/student-dashboard/student-dashboard.component';
 import { StudentJobsComponent } from './component/student-jobs/student-jobs.component';
+import { AdminListApplicantsComponent } from './component/admin-list-applicants/admin-list-applicants.component';
 
 
 const routes: Routes = [
@@ -26,7 +27,8 @@ const routes: Routes = [
   {path:"admin-dashboard",component:AdminDashboardComponent},
   {path:"admin/list-job", component: AdminListJobsComponent},
   {path:"admin/list-student",component:AdminListStudentComponent},
-  {path:"admin/list-employer",component:AdminListEmployerComponent}
+  {path:"admin/list-employer",component:AdminListEmployerComponent},
+  {path:"admin/list-applicants", component:AdminListApplicantsComponent}
 ];
 
 @NgModule({
