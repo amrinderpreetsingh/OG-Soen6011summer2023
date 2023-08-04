@@ -6,13 +6,11 @@ import { Student } from 'src/app/model/student.model';
 import { AuthService } from 'src/app/service/auth.service';
 
 @Component({
-  selector: 'app-list-student',
-  templateUrl: './list-student.component.html',
-  styleUrls: ['./list-student.component.css']
+  selector: 'app-admin-list-applicants',
+  templateUrl: './admin-list-applicants.component.html',
+  styleUrls: ['./admin-list-applicants.component.css']
 })
-
-
-export class ListStudentComponent implements OnInit {
+export class AdminListApplicantsComponent implements OnInit {
   @ViewChild(MatPaginator) paginator !: MatPaginator;
   job_id: string | undefined;
   job_status: any;
@@ -29,12 +27,11 @@ export class ListStudentComponent implements OnInit {
         this.getStudentsAppliedForJob(job_id);
       } else {
         this.list_all_students()
-      
       }
     });
   }
 
-  displayedColumns: string[] = ['id', 'name', 'email', 'qualification', 'experience', 'school', 'action'];
+  displayedColumns: string[] = ['id', 'name', 'email', 'qualification', 'experience', 'school','status', 'action'];
   dataSource: any;
   student_data: any = [];
 
@@ -85,4 +82,5 @@ export class ListStudentComponent implements OnInit {
      this.ngOnInit();
     })
   }
+
 }
