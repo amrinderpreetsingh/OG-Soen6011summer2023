@@ -36,10 +36,10 @@ namespace PresentationLayer.Controllers
         }
 
         [HttpGet]
-        [Route("getAllJobs")]
-        public ActionResult GetAllJobs()
+        [Route("getAllAvailableJobs")]
+        public ActionResult GetAllJobs(string email)
         {
-            return Ok(_serviceFacade.GetAllJobsForStudent());
+            return Ok(_serviceFacade.GetAvailableJobsForStudent(email));
         }
 
         [HttpGet]
@@ -47,6 +47,20 @@ namespace PresentationLayer.Controllers
         public ActionResult ApplyJob(string email,int jobId)
         {
             return Ok(_serviceFacade.StudentJobApply(email,jobId));
+        }
+
+        [HttpGet]
+        [Route("GetAppliedJobs")]
+        public ActionResult GetAppliedJobs(string email)
+        {
+            return Ok(_serviceFacade.GetAppliedJobsByStudent(email));
+        }
+
+        [HttpGet]
+        [Route("GetStudent")]
+        public ActionResult GetStudent(string email)
+        {
+            return Ok(_serviceFacade.GetStudent(email));
         }
     }
 }

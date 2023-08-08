@@ -61,5 +61,40 @@ namespace PresentationLayer.Controllers
         {
             return Ok(_serviceFacade.GetStudents());
         }
+
+        [HttpGet]
+        [Route("getListofStudentsForAJob")]
+        public ActionResult GetListOfAppliedStudentsForAJob(int id)
+        {
+            return Ok(_serviceFacade.GetListOfAppliedStudentsInJob(id));
+        }
+
+        [HttpDelete]
+        [Route("DeleteJob")]
+        public ActionResult DeleteJob(int id)
+        {
+            return Ok(_serviceFacade.DeleteJob(id));
+        }
+
+        [HttpGet]
+        [Route("AcceptApplication")]
+        public ActionResult AcceptApplication(int studentId,int jobId)
+        {
+            return Ok(_serviceFacade.AcceptStudent(studentId, jobId));
+        }
+
+        [HttpGet]
+        [Route("DeclineApplication")]
+        public ActionResult DeclineApplication(int studentId, int jobId)
+        {
+            return Ok(_serviceFacade.DeclinetStudent(studentId, jobId));
+        }
+
+        [HttpGet]
+        [Route("SelectApplicationForInterview")]
+        public ActionResult SelectFroInterview(int studentId,int jobId)
+        {
+            return Ok(_serviceFacade.SelectStudentForInterview(studentId, jobId));
+        }
     }
 }

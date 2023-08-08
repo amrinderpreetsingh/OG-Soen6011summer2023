@@ -1,0 +1,41 @@
+table {
+    width: 100%;
+  }
+  
+  mat-sidenav-container {
+    height: 100%;
+  }
+  
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+  
+  .custom-container {
+    padding: 0 10px; /* Add 10px of padding on both left and right sides */
+  }
+  
+  .custom-table {
+    width: 100%;
+    table-layout: fixed; /* Use fixed table layout */
+  }
+  
+  .mat-cell {
+    padding: 8px; /* Add padding to the cells for some spacing around content */
+  }
+  
+  .description-cell {
+    white-space: nowrap; /* Prevent text from wrapping */
+    overflow: hidden; /* Hide any overflow text */
+    text-overflow: ellipsis; /* Show ellipsis (...) when text overflows */
+    width: 25%; /* Allocate 50% of the available space for the "Description" column */
+  }
+  
+  .action-cell {
+    width: 25%; /* Allocate 50% of the available space for the "Action" column */
+  }
+  
+  .truncate-text {
+    /* Allow word wrapping within the cell for the tooltip content */
+    word-wrap: break-word;
+  }
+  

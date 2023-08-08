@@ -6,17 +6,17 @@
           <mat-icon mat-list-icon class="chevron-button" [ngClass]="{ rotated: isExpanded }">chevron_right
           </mat-icon>
         </mat-list-item>
-        <mat-list-item [routerLink]="'/post-job'">
+        <mat-list-item [routerLink]="'/employer/post-job'">
           <mat-icon mat-list-icon>important_devices</mat-icon>
           <span *ngIf="isExpanded" class="menu-item">Post Jobs</span>
         </mat-list-item>
   
-        <mat-list-item [routerLink]="'/list-job'">
+        <mat-list-item [routerLink]="'/employer/list-job'">
           <mat-icon mat-list-icon>assignment icon</mat-icon>
           <span *ngIf="isExpanded" class="menu-item">List Jobs</span>
         </mat-list-item>
 
-        <mat-list-item [routerLink]="'/list-student'">
+        <mat-list-item [routerLink]="'/employer/list-student'">
           <mat-icon mat-list-icon>supervisor_account</mat-icon>
           <span *ngIf="isExpanded" class="menu-item">List Students</span>
         </mat-list-item>
@@ -76,11 +76,19 @@
                   </ng-container>
     
       
-                <!-- <ng-container matColumnDef="action">
+                <ng-container  matColumnDef="action">
                   <th mat-header-cell *matHeaderCellDef>Action</th>
-                  <td mat-cell *matCellDef="let element"><button mat-raised-button color="primary" (click)="editJob(element.id)">Edit</button>
-                    | <button mat-raised-button color="warn" (click)="deleteJob(element.id)">Delete</button></td>
-                </ng-container> -->
+                  <td mat-cell *matCellDef="let element">
+                    <button *ngIf="element.status=='Applied'" mat-raised-button color="primary" (click)="selectForInterview(element)">Interview</button>
+                    <span *ngIf="element.status=='Applied'"> | </span>
+                   <button *ngIf="element.status=='Applied'" mat-raised-button color="warn" (click)="declineJob(element)">Reject</button>
+                   <button *ngIf="element.status=='Interview'" mat-raised-button color="primary" (click)="applyJob(element)">Accept</button>
+                    <span *ngIf="element.status=='Interview'"> | </span>
+                   <button *ngIf="element.status=='Interview'" mat-raised-button color="warn" (click)="declineJob(element)">Reject</button>
+                   <button *ngIf="element.status=='Accepted'" style="background-color:#04AF70;color: white;"  mat-raised-button disabled color="primary" (click)="applyJob(element)">Accepted</button>
+                   <button *ngIf="element.status=='Declined'" style="background-color:red;color: white;" mat-raised-button disabled color="warn" (click)="declineJob(element)">Rejected</button></td>
+
+                </ng-container>
       
                 <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
                 <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>

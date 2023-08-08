@@ -37,9 +37,19 @@ namespace BusinessLogicLayer.Services
             return true;
         }
 
-        public List<Job> GetAllJobs()
+        public List<Job> GetAllAvailableJobs(string email)
         {
-            return _databaseDataService.GetAllJobs();
+            var jobs= _databaseDataService.GetAllJobs();
+            var availableJobs = new List<Job>();
+            var student = _databaseDataService.GetStudent(email);
+            foreach (var job in jobs)
+            {
+                if (!job.StudentsApplied.Contains(student.Id))
+                {
+                    availableJobs.Add(job);
+                }
+            }
+            return availableJobs;
         }
 
         public bool ApplyJob(string studentEmail, int JobId)
@@ -51,8 +61,54 @@ namespace BusinessLogicLayer.Services
                 return false;
             }
             job.StudentsApplied.Add(student.Id);
-            student.JobsApplied.Add(JobId);
+            student.JobsApplied.Add(new JobStatus
+            {
+                JobId=job.Id,
+                Status=Constant.APPLIED_STATUS
+            });
             return true;
+        }
+
+        public List<Student> GetAllStudents()
+        {
+            return _databaseDataService.GetAllStudents();
+        }
+
+        public bool EditStudent(Student updatedStudent)
+        {
+            var student = _databaseDataService.GetStudentByID(updatedStudent.Id);
+            if (student == null)
+            {
+                return false;
+            }
+            student.Name = updatedStudent.Name;
+            student.Email = updatedStudent.Email;
+            student.Password = updatedStudent.Password;
+            student.Qualification = updatedStudent.Qualification;
+            student.School = updatedStudent.School;
+            student.Experience = updatedStudent.Experience;
+            return true;
+        }
+
+        public bool DeleteStudent(int id)
+        {
+            var jobs = _databaseDataService.GetAllJobs();
+            foreach (var job in jobs.ToList())
+            {
+                foreach (var studentApplied in job.StudentsApplied)
+                {
+                    if (studentApplied == id)
+                    {
+                        job.StudentsApplied.RemoveAll(x => x == id);
+                    }
+                }
+            }
+            return _databaseDataService.DeleteStudent(id);
+        }
+
+        public Student GetStudent(string email)
+        {
+            return _databaseDataService.GetStudent(email);
         }
     }
 }

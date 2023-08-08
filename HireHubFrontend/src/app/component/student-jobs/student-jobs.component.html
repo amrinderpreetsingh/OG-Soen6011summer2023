@@ -1,105 +1,58 @@
 <mat-sidenav-container autosize>
-    <mat-sidenav #sidenav mode="side" opened="isExpanded">
-      <mat-nav-list>
-  
-        <mat-list-item (click)="isExpanded = !isExpanded">
-          <mat-icon mat-list-icon class="chevron-button" [ngClass]="{ rotated: isExpanded }">chevron_right
-          </mat-icon>
-        </mat-list-item>
-        <mat-list-item [routerLink]="'/student-jobs'">
-          <mat-icon mat-list-icon>important_devices</mat-icon>
-          <span *ngIf="isExpanded" class="menu-item">Job Openings</span>
-        </mat-list-item>
-  
-        
-  
-  
-      </mat-nav-list>
-    </mat-sidenav>
-  
-    <!-- Content - rendered Content for the current router path into the <router-outlet>, e.g. /dashboard or /info-->
-    <mat-sidenav-content>
-      <mat-toolbar color="primary">
-        <h4>Student Dashboard</h4>
-        <span class="example-spacer "></span>
-        <button mat-raised-button (click)="logout()" color="warn">Logout</button>
-      </mat-toolbar>
+  <mat-sidenav #sidenav mode="side" opened="isExpanded">
+    <mat-nav-list>
 
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-md-2"></div>
-          <div class="col-md-8 mt-4">
-            <div class="col-md-12" >
-              <table mat-table [dataSource]="dataSource">
-      
-            
-                <ng-container matColumnDef="id">
-                  <th mat-header-cell *matHeaderCellDef>ID</th>
-                  <td mat-cell *matCellDef="let element">{{ element.id }}</td>
-                </ng-container>
-      
-             
-                <ng-container matColumnDef="title">
-                  <th mat-header-cell *matHeaderCellDef>Title</th>
-                  <td mat-cell *matCellDef="let element">{{ element.title }}</td>
-                </ng-container>
-      
-               
-                <ng-container matColumnDef="skills">
-                  <th mat-header-cell *matHeaderCellDef>Skills</th>
-                  <td mat-cell *matCellDef="let element">{{ element.skills }}</td>
-                </ng-container>
-      
-              
-                <ng-container matColumnDef="role">
-                  <th mat-header-cell *matHeaderCellDef>Role</th>
-                  <td mat-cell *matCellDef="let element">{{ element.role }}</td>
-                </ng-container>
-      
-                <ng-container matColumnDef="type">
-                  <th mat-header-cell *matHeaderCellDef>Type</th>
-                  <td mat-cell *matCellDef="let element">{{ element.type }}</td>
-                </ng-container>
+      <mat-list-item (click)="isExpanded = !isExpanded">
+        <mat-icon mat-list-icon class="chevron-button" [ngClass]="{ rotated: isExpanded }">chevron_right
+        </mat-icon>
+      </mat-list-item>
+      <mat-list-item [routerLink]="'/student/student-jobs'">
+        <mat-icon mat-list-icon>important_devices</mat-icon>
+        <span *ngIf="isExpanded" class="menu-item">Applied Jobs</span>
+      </mat-list-item>
+    </mat-nav-list>
+  </mat-sidenav>
 
-                <ng-container matColumnDef="experience">
-                    <th mat-header-cell *matHeaderCellDef>Experience</th>
-                    <td mat-cell *matCellDef="let element">{{ element.experience }}</td>
-                  </ng-container>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button mat-button [routerLink]="'/Student'" ><h4>Student Dashboard</h4> </button> 
+      <span class="example-spacer "></span>
+      <button mat-raised-button (click)="logout()" color="warn">Logout</button>
+    </mat-toolbar>
 
-                <ng-container matColumnDef="description">
-                    <th mat-header-cell *matHeaderCellDef>Description</th>
-                    <td mat-cell *matCellDef="let element">{{ element.description }}</td>
-                  </ng-container>
+    <div class="card-container">
+      <div *ngFor="let job of job_data" class="card">
+        <mat-card class="example-card">
+          <mat-card-header>
+            <mat-card-title>{{job.title}}</mat-card-title>
+            <mat-card-subtitle>{{job.type}}</mat-card-subtitle>
 
-                  <ng-container matColumnDef="postedBy">
-                    <th mat-header-cell *matHeaderCellDef>Posted By</th>
-                    <td mat-cell *matCellDef="let element">{{ element.postedBy }}</td>
-                  </ng-container>
-      
-                <!-- <ng-container matColumnDef="action">
-                  <th mat-header-cell *matHeaderCellDef>Action</th>
-                  <td mat-cell *matCellDef="let element"><button mat-raised-button color="primary" (click)="editJob(element.id)">Edit</button>
-                    | <button mat-raised-button color="warn" (click)="deleteJob(element.id)">Delete</button></td>
-                </ng-container> -->
-      
-                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-              </table>
-              <mat-paginator [pageSizeOptions]="[5,10,20]" showFirstLastButtons></mat-paginator>
+          </mat-card-header>
+          <mat-divider></mat-divider>
+
+          <mat-card-content class="fixed-height-content">
+            <br>
+            <p><b>Company : </b>{{job.companyName}}</p>
+            <p><b>Experience : </b>{{job.experience}}</p>
+            <p><b>Skills : </b>{{job.skills}}</p>
+            <p><b>Description : </b>{{job.description}}</p>
+          </mat-card-content>
+
+          <mat-divider></mat-divider>
+          <mat-card-actions class="custom-card-actions">
+            <div class="button-container">
+              <button *ngIf="job.status=='Applied'" style="background-color:rgb(106, 157, 223);color: white;" mat-stroked-button disabled color="primary">Applied</button>
+              <button *ngIf="job.status=='Interview'" style="background-color:#04AF70;color: white;" mat-stroked-button disabled color="primary" >Interview</button>
+              <button *ngIf="job.status=='Accepted'" style="background-color:#04AF70;color: white;" mat-stroked-button disabled color="primary" >Accepted</button>
+              <button *ngIf="job.status=='Declined'" style="background-color:red;color: white;" mat-stroked-button disabled color="primary" >Rejected</button>
             </div>
-          </div>
-          <div class="col-md-2"></div>
-        </div>
-      </div> 
+          </mat-card-actions>
+          <mat-card-footer>
 
-
-
-      <div id="post-job">
-        <!-- Post Jobs section content -->
+          </mat-card-footer>
+        </mat-card>
       </div>
-      <div id="list-job">
-        <!-- List Jobs section content -->
-      </div>
-    </mat-sidenav-content>
-  </mat-sidenav-container>
-  
+    </div>
+  </mat-sidenav-content>
+
+</mat-sidenav-container>

@@ -25,6 +25,21 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { ListStudentComponent } from './component/list-student/list-student.component';
 import { StudentJobsComponent } from './component/student-jobs/student-jobs.component';
+import { MatCardModule } from '@angular/material/card';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { AdminListStudentComponent } from './component/admin-list-student/admin-list-student.component';
+import { AdminListJobsComponent } from './component/admin-list-jobs/admin-list-jobs.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { EditJobFormComponent } from './component/edit-job-form/edit-job-form.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import { MatInputModule } from '@angular/material/input';
+import { EditStudentFormComponent } from './component/edit-student-form/edit-student-form.component';
+import { EditEmployerFormComponent } from './component/edit-employer-form/edit-employer-form.component';
+import { AdminListEmployerComponent } from './component/admin-list-employer/admin-list-employer.component';
+import { AdminListApplicantsComponent } from './component/admin-list-applicants/admin-list-applicants.component';
+
+
+
 
 @NgModule({
   declarations: [
@@ -38,6 +53,13 @@ import { StudentJobsComponent } from './component/student-jobs/student-jobs.comp
     PostJobComponent,
     ListStudentComponent,
     StudentJobsComponent,
+    AdminListStudentComponent,
+    AdminListJobsComponent,
+    EditJobFormComponent,
+    EditStudentFormComponent,
+    EditEmployerFormComponent,
+    AdminListEmployerComponent,
+    AdminListApplicantsComponent
   ],
   imports: [
     BrowserModule,
@@ -54,7 +76,12 @@ import { StudentJobsComponent } from './component/student-jobs/student-jobs.comp
     MatFormFieldModule,
     MatTableModule,
     MatPaginatorModule,
-    MatSortModule
+    MatSortModule,
+    MatCardModule,
+    MatExpansionModule,
+    ReactiveFormsModule,
+    MatDialogModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]

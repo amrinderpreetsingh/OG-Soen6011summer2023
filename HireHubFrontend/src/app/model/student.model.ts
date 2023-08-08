@@ -6,4 +6,5 @@ export class Student {
     qualification: string= ''
     experience : string= ''
     name: string = ''
+    jobsApplied:any[] | undefined;
 }

@@ -8,7 +8,11 @@ namespace BusinessLogicLayer.Services
     {
         public bool Login(string email, string password);
         public bool Signup(Student employer);
-        public List<Job> GetAllJobs();
+        public List<Job> GetAllAvailableJobs(string email);
         public bool ApplyJob(string studentEmail, int JobId);
+        public List<Student> GetAllStudents();
+        public bool EditStudent(Student updatedStudent);
+        public bool DeleteStudent(int id);
+        public Student GetStudent(string email);
     }
 }

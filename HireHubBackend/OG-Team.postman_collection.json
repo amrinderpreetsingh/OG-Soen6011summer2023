@@ -129,7 +129,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:5001/employer/getjobs?email=jobs@nagarro.com",
+					"raw": "http://localhost:5001/employer/GetJobs?email=jobs@nagarro.com",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -137,7 +137,7 @@
 					"port": "5001",
 					"path": [
 						"employer",
-						"getjobs"
+						"GetJobs"
 					],
 					"query": [
 						{
@@ -156,7 +156,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"title\":\"Associate Engineer\",\n    \"role\":\"Developer\",\n    \"Experience\":\"1\",\n    \"skills\":\".net core\",\n    \"description\":\"you have to develop microservices\",\n    \"type\":\"Permanent\",\n    \"postedBy\":\"jobs@nagarro.com\"\n}",
+					"raw": "{\n    \"title\":\"Engineer\",\n    \"role\":\"Developer\",\n    \"Experience\":\"1\",\n    \"skills\":\".net core\",\n    \"description\":\"you have to develop microservices\",\n    \"type\":\"Permanent\",\n    \"postedBy\":\"jobs@nagarro.com\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -179,12 +179,12 @@
 			"response": []
 		},
 		{
-			"name": "Student/GetAllJobs",
+			"name": "Student/GetAllAvailableJobs",
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:5001/student/getAllJobs",
+					"raw": "http://localhost:5001/student/getAllAvailableJobs?email=gagan@hirehub.com",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -192,7 +192,13 @@
 					"port": "5001",
 					"path": [
 						"student",
-						"getAllJobs"
+						"getAllAvailableJobs"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "gagan@hirehub.com"
+						}
 					]
 				}
 			},
@@ -200,6 +206,322 @@
 		},
 		{
 			"name": "Student/ApplyJob",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5001/student/applyjob?email=gagan@hirehub.com&jobId=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"student",
+						"applyjob"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "gagan@hirehub.com"
+						},
+						{
+							"key": "jobId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Admin/UpdateJob",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\":\"Associate Engineer\",\n    \"role\":\" Java Developer\",\n    \"Experience\":\"3\",\n    \"skills\":\".net core\",\n    \"description\":\"you have to develop microservices\",\n    \"type\":\"Permanent\",\n    \"postedBy\":\"jobs@nagarro.com\",\n    \"Id\":2\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5001/admin/updateJob",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"admin",
+						"updateJob"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Admin/DeleteJob",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5001/admin/deletejob?id=3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"admin",
+						"deletejob"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Student/GetAppliedJobs",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5001/student/getAppliedJobs?email=gagan@hirehub.com",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"student",
+						"getAppliedJobs"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "gagan@hirehub.com"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Employer/getListofStudentsForAJob",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5001/employer/getListofStudentsForAJob?id=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"employer",
+						"getListofStudentsForAJob"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Admin/GetAllJobs",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5001/admin/AllJobs",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"admin",
+						"AllJobs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Admin/GetAllEmployers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5001/admin/AllEmployers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"admin",
+						"AllEmployers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Admin/AllStudents",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5001/admin/AllStudents",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"admin",
+						"AllStudents"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Admin/EditEmployer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"Id\":1,\n    \"companyName\": \"KPMG\",\n    \"companyEmail\": \"jobs@kpmg.com\",\n    \"companyPassword\": \"1234\",\n    \"address\": \"India\",\n    \"about\":\"ghaint\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5001/admin/editEmployer",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"admin",
+						"editEmployer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Admin/DeleteEmployer",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5001/admin/DeleteEmployer?id=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"admin",
+						"DeleteEmployer"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Admin/EditStudent",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Admin/DeleteStudent",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5001/admin/DeleteStudent?id=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"admin",
+						"DeleteStudent"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Employer/AcceptStudent",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5001/employer/AcceptApplication?studentId=1&jobId=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"employer",
+						"AcceptApplication"
+					],
+					"query": [
+						{
+							"key": "studentId",
+							"value": "1"
+						},
+						{
+							"key": "jobId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Employer/DeclineApplication",
 			"request": {
 				"method": "GET",
 				"header": []
