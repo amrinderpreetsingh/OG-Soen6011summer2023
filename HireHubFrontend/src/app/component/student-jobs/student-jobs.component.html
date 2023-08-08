@@ -42,8 +42,9 @@
           <mat-card-actions class="custom-card-actions">
             <div class="button-container">
               <button *ngIf="job.status=='Applied'" style="background-color:rgb(106, 157, 223);color: white;" mat-stroked-button disabled color="primary">Applied</button>
+              <button *ngIf="job.status=='Interview'" style="background-color:#04AF70;color: white;" mat-stroked-button disabled color="primary" >Interview</button>
               <button *ngIf="job.status=='Accepted'" style="background-color:#04AF70;color: white;" mat-stroked-button disabled color="primary" >Accepted</button>
-              <button *ngIf="job.status=='Declined'" style="background-color:red;color: white;" mat-stroked-button disabled color="primary" >Declined</button>
+              <button *ngIf="job.status=='Declined'" style="background-color:red;color: white;" mat-stroked-button disabled color="primary" >Rejected</button>
             </div>
           </mat-card-actions>
           <mat-card-footer>

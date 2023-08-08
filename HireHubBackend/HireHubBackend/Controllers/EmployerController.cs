@@ -89,5 +89,12 @@ namespace PresentationLayer.Controllers
         {
             return Ok(_serviceFacade.DeclinetStudent(studentId, jobId));
         }
+
+        [HttpGet]
+        [Route("SelectApplicationForInterview")]
+        public ActionResult SelectFroInterview(int studentId,int jobId)
+        {
+            return Ok(_serviceFacade.SelectStudentForInterview(studentId, jobId));
+        }
     }
 }

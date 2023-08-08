@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Jobs } from 'src/app/model/jobs';
+import { Jobs } from 'src/app/model/jobs.model';
 import { AuthService } from 'src/app/service/auth.service';
 
 @Component({
@@ -20,7 +20,7 @@ export class PostJobComponent implements OnInit {
   jobTypes: string[]
   experiences:number[]
 
-  postJobs : Jobs = new Jobs();
+  postJobs!: Jobs; 
 
   constructor(private authService:AuthService , private route: Router) { 
     this.jobTypes = ['Internship', 'Contract', 'Full Time', 'Part Time'];
@@ -29,6 +29,7 @@ export class PostJobComponent implements OnInit {
   isExpanded: boolean = false;
 
   ngOnInit(): void {
+    this.postJobs= new Jobs();
     this.jobTitle = '';
     this.skills = '';
     this.roles='';
@@ -36,7 +37,7 @@ export class PostJobComponent implements OnInit {
     this.jobType='';
     this.description='';
     this.id = undefined;
-    localStorage.setItem('user','jobs@nagarro.com')
+
   }
  submit_job(){
  this.postJobs.id= this.id;
@@ -50,7 +51,7 @@ export class PostJobComponent implements OnInit {
  console.log(this.postJobs)
 
  this.authService.postJobs(this.postJobs).subscribe(res => {
-  console.log(res)
+
   if(res==true){
     alert("Job Posted")
     this.ngOnInit()

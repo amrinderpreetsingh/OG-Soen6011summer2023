@@ -82,5 +82,9 @@ export class AdminListApplicantsComponent implements OnInit {
      this.ngOnInit();
     })
   }
-
+  selectForInterview(data: any) {
+    this.authService.selectForInterview(data.id, this.job_id).subscribe(res => {
+     this.ngOnInit();
+    })
+  }
 }

@@ -79,11 +79,14 @@
                 <ng-container  matColumnDef="action">
                   <th mat-header-cell *matHeaderCellDef>Action</th>
                   <td mat-cell *matCellDef="let element">
-                    <button *ngIf="element.status=='Applied'" mat-raised-button color="primary" (click)="applyJob(element)">Accept</button>
+                    <button *ngIf="element.status=='Applied'" mat-raised-button color="primary" (click)="selectForInterview(element)">Interview</button>
                     <span *ngIf="element.status=='Applied'"> | </span>
-                   <button *ngIf="element.status=='Applied'" mat-raised-button color="warn" (click)="declineJob(element)">Decline</button>
+                   <button *ngIf="element.status=='Applied'" mat-raised-button color="warn" (click)="declineJob(element)">Reject</button>
+                   <button *ngIf="element.status=='Interview'" mat-raised-button color="primary" (click)="applyJob(element)">Accept</button>
+                    <span *ngIf="element.status=='Interview'"> | </span>
+                   <button *ngIf="element.status=='Interview'" mat-raised-button color="warn" (click)="declineJob(element)">Reject</button>
                    <button *ngIf="element.status=='Accepted'" style="background-color:#04AF70;color: white;"  mat-raised-button disabled color="primary" (click)="applyJob(element)">Accepted</button>
-                   <button *ngIf="element.status=='Declined'" style="background-color:red;color: white;" mat-raised-button disabled color="warn" (click)="declineJob(element)">Declined</button></td>
+                   <button *ngIf="element.status=='Declined'" style="background-color:red;color: white;" mat-raised-button disabled color="warn" (click)="declineJob(element)">Rejected</button></td>
 
                 </ng-container>
       

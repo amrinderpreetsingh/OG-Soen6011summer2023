@@ -14,5 +14,6 @@ namespace BusinessLogicLayer.Services
         public bool DeleteEmployer(int id);
         public bool AcceptStudent(int studentId, int jobId);
         public bool DeclineStudent(int studentId, int jobId);
+        public bool SelectStudentForInterview(int studentId, int jobId);
     }
 }

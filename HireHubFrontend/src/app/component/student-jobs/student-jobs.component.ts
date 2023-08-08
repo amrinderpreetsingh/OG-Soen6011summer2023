@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
-import { Jobs } from 'src/app/model/jobs';
+import { Jobs } from 'src/app/model/jobs.model';
 import { Student } from 'src/app/model/student.model';
 import { AuthService } from 'src/app/service/auth.service';
 import Swal from 'sweetalert2'
@@ -29,7 +29,7 @@ export class StudentJobsComponent implements OnInit {
         console.log(element);
         
         element["companyName"]=this.extractDomainFromEmail(element.postedBy);
-        this.student.jobsApplied.forEach((elem: { jobId: string | undefined; status: any; })=>{
+        this.student.jobsApplied.forEach((elem: { jobId: string ; status: any; })=>{
           if(element.id==elem.jobId){
             console.log("kida");
             element["status"]=elem.status
@@ -37,13 +37,6 @@ export class StudentJobsComponent implements OnInit {
         })
       });
       this.job_data=res;
-      // this.job_data = res.map((job: any) => {
-      //   const companyName = this.extractDomainFromEmail(job.postedBy);
-      //   job['companyName']=companyName;
-      //   return { ...job, companyName: companyName };
-        
-      // })
-      console.log(this.job_data);
     })
   }
 
