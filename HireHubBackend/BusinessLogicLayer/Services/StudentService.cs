@@ -92,6 +92,17 @@ namespace BusinessLogicLayer.Services
 
         public bool DeleteStudent(int id)
         {
+            var jobs = _databaseDataService.GetAllJobs();
+            foreach (var job in jobs.ToList())
+            {
+                foreach (var studentApplied in job.StudentsApplied)
+                {
+                    if (studentApplied == id)
+                    {
+                        job.StudentsApplied.RemoveAll(x => x == id);
+                    }
+                }
+            }
             return _databaseDataService.DeleteStudent(id);
         }
 

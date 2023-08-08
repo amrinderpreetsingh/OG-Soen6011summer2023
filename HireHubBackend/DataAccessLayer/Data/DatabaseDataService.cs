@@ -14,7 +14,18 @@ namespace DataAccessLayer.Data
                 CompanyName = "Nagarro",
                 CompanyEmail = "jobs@nagarro.com",
                 CompanyPassword = "1234",
-                Id = 1
+                Id = 1,
+                About="Good Company",
+                Address="India"
+            },
+            new Employer
+            {
+                CompanyName = "IO",
+                CompanyEmail = "jobs@io.com",
+                CompanyPassword = "1234",
+                Id = 2,
+                About="Good Company",
+                Address="India"
             }
         };
 
@@ -26,60 +37,40 @@ namespace DataAccessLayer.Data
                 Id=1,
                 Description="hardworker",
                 Experience="2",
-                Role="Full-Time",
+                Role="Full Stack Developer",
                 Skills="Java",
                 PostedBy="jobs@nagarro.com",
-                Type="Intern" },
+                Type="Internship" },
              new Job
             {
-                Title="SDE-2",
+                Title="SDE-3",
                 Id=2,
                 Description="Minimum Guy",
                 Experience="2",
-                Role="Full-Time",
+                Role="Backend Developer",
                 Skills="Java",
                 PostedBy="jobs@io.com",
-                Type="Intern" },
+                Type="Full Time" },
                          new Job
             {
-                Title="Engineer",
+                Title="Senior Engineer",
                 Id=5,
                 Description="The <mat-card> The amount of CSS generated for flexbox CSS is extremely huge(>250k), The amount of CSS generated for flexbox CSS is extremely huge(>250k)",
                 Experience="2",
-                Role="Full-Time",
+                Role="Developer",
                 Skills="Java",
                 PostedBy="jobs@nagarro.com",
-                Type="Intern" },
+                Type="Internship" },
              new Job
             {
                 Title="SDE-2",
                 Id=6,
                 Description="Minimum Guy",
                 Experience="2",
-                Role="Full-Time",
+                Role="Tester",
                 Skills="Java",
                 PostedBy="jobs@io.com",
-                Type="Intern" },
-                         new Job
-            {
-                Title="Engineer",
-                Id=3,
-                Description="hardworker",
-                Experience="2",
-                Role="Full-Time",
-                Skills="Java",
-                PostedBy="jobs@nagarro.com",
-                Type="Intern" },
-             new Job
-            {
-                Title="SDE-2",
-                Id=4,
-                Description="Minimum Guy",
-                Experience="2",
-                Role="Full-Time",
-                Skills="Java",
-                PostedBy="jobs@io.com",
-                Type="Intern" }
+                Type="Full Time" }
         };
 
         private List<Student> _students = new List<Student>()
@@ -118,7 +109,7 @@ namespace DataAccessLayer.Data
 
         public bool AddJob(Job job)
         {
-            job.Id = _jobs.Max(x => x.Id)+1;
+            job.Id = _jobs.Max(x => x.Id) + 1;
             _jobs.Add(job);
             return true;
         }
@@ -136,7 +127,7 @@ namespace DataAccessLayer.Data
 
         public Student GetStudentByID(int id)
         {
-            var student = _students.FirstOrDefault(x => x.Id==id);
+            var student = _students.FirstOrDefault(x => x.Id == id);
             return student;
         }
 

@@ -9,10 +9,12 @@ namespace BusinessLogicLayer.Services
     public class EmployerService:IEmployerService
     {
         private readonly IDatabaseDataService _databaseDataService;
+        private readonly IJobService _jobService;
 
-        public EmployerService(IDatabaseDataService databaseDataService)
+        public EmployerService(IDatabaseDataService databaseDataService,IJobService jobService)
         {
             _databaseDataService = databaseDataService;
+            _jobService = jobService;
         }
 
         public bool Login(string email, string password)
@@ -64,6 +66,15 @@ namespace BusinessLogicLayer.Services
 
         public bool DeleteEmployer(int id)
         {
+            var employee = _databaseDataService.GetEmployer(id);
+            var jobs = _databaseDataService.GetAllJobs();
+            foreach (var job in jobs.ToList())
+            {
+                if (job.PostedBy.ToLower().Equals(employee.CompanyEmail.ToLower()))
+                {
+                    _jobService.DeleteJob(job.Id);
+                }
+            }
             return _databaseDataService.DeleteEmployer(id);
         }
 
@@ -99,6 +110,25 @@ namespace BusinessLogicLayer.Services
                 if (studentJob.JobId == jobId)
                 {
                     studentJob.Status = Constant.DECLINED_STATUS;
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public bool SelectStudentForInterview(int studentId,int jobId)
+        {
+            var student = _databaseDataService.GetStudentByID(studentId);
+            var job = _databaseDataService.GetJob(jobId);
+            if (student == null || job == null)
+            {
+                return false;
+            }
+            foreach (var studentJob in student.JobsApplied)
+            {
+                if (studentJob.JobId == jobId)
+                {
+                    studentJob.Status = Constant.SELECTED_FOR_INTERVIEW;
                     return true;
                 }
             }

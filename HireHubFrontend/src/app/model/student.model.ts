@@ -1,5 +1,3 @@
-import { JobStatus } from "./JobStatus";
-
 export class Student {
     id : number | undefined ;
     password : string = '';

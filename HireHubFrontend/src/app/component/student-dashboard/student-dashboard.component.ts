@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Jobs } from 'src/app/model/jobs';
+import { Jobs } from 'src/app/model/jobs.model';
 import { AuthService } from 'src/app/service/auth.service';
 import Swal from 'sweetalert2'
 @Component({

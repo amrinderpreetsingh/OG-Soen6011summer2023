@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Employer } from '../model/employer.model';
 import { Student } from '../model/student.model';
-import { Jobs } from '../model/jobs';
+import { Jobs } from '../model/jobs.model';
 
 
 @Injectable({
@@ -35,6 +35,7 @@ export class AuthService {
   acceptApplicationUrl: string = ''
   declineApplicationUrl: string = ''
   getLoginStudentUrl:string='';
+  selectForInterviewUrl:string='';
 
   constructor(private http: HttpClient) {
 
@@ -62,6 +63,7 @@ export class AuthService {
     this.acceptApplicationUrl = "http://localhost:5001/employer/AcceptApplication?studentId="
     this.declineApplicationUrl = "http://localhost:5001/employer/DeclineApplication?studentId="
     this.getLoginStudentUrl="http://localhost:5001/student/GetStudent?email="
+    this.selectForInterviewUrl="http://localhost:5001/employer/SelectApplicationForInterview?studentId="
   }
 
   loginStudent(student: Student): Observable<any> {
@@ -161,5 +163,9 @@ export class AuthService {
 
   getLoginStudent(){
     return this.http.get(this.getLoginStudentUrl+ localStorage.getItem('student_email'))
+  }
+
+  selectForInterview(studentId:string, jobId:any){
+    return this.http.get(this.selectForInterviewUrl+studentId+"&jobId="+jobId)
   }
 }

@@ -29,5 +29,6 @@ namespace BusinessLogicLayer.Services
         public bool AcceptStudent(int studentId, int jobId);
         public bool DeclinetStudent(int studentId, int jobId);
         public Student GetStudent(string email);
+        public bool SelectStudentForInterview(int studentId, int jobId);
     }
 }

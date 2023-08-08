@@ -4,7 +4,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
-import { Jobs } from 'src/app/model/jobs';
+import { Jobs } from 'src/app/model/jobs.model';
 import { AuthService } from 'src/app/service/auth.service';
 import Swal from 'sweetalert2';
 import { EditStudentFormComponent } from '../edit-student-form/edit-student-form.component';

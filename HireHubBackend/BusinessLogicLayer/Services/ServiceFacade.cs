@@ -130,5 +130,10 @@ namespace BusinessLogicLayer.Services
         {
             return _studentService.GetStudent(email);
         }
+
+        public bool SelectStudentForInterview(int studentId,int jobId)
+        {
+            return _employerService.SelectStudentForInterview(studentId, jobId);
+        }
     }
 }

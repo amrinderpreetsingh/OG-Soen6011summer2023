@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { AuthService } from 'src/app/service/auth.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { MatPaginator } from '@angular/material/paginator';
-import { Jobs } from 'src/app/model/jobs';
+import { Jobs } from 'src/app/model/jobs.model';
 import { MatTableDataSource } from '@angular/material/table';
 import Swal from 'sweetalert2';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
@@ -95,7 +95,7 @@ export class AdminListEmployerComponent implements OnInit {
         });
         Swal.fire({
           title: 'Deleted!',
-          text: 'YEmployer has been deleted.',
+          text: 'Employer has been deleted.',
           icon: 'success',
         });
       }
